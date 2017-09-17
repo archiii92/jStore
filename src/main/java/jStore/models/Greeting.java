@@ -1,4 +1,4 @@
-package jStore.Models;
+package jStore.models;
 
 public class Greeting {
 

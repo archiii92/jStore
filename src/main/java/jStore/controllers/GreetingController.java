@@ -1,8 +1,8 @@
-package jStore.Controllers;
+package jStore.controllers;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import jStore.Models.Greeting;
+import jStore.models.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

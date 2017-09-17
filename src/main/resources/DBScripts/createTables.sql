@@ -6,9 +6,9 @@ DROP TABLE IF EXISTS public.sellers;
 
 CREATE TABLE public.products(
 	product_id uuid PRIMARY KEY,
-    product_name text CHECK (product_name != '') UNIQUE,
-    unit_price numeric(10,2) CHECK (unit_price > 0),
-    units_in_stock integer CHECK (units_in_stock >= 0)
+    product_name text CHECK (product_name != '') UNIQUE NOT NULL,
+    unit_price numeric(10,2) CHECK (unit_price >= 0) DEFAULT 0,
+    units_in_stock integer CHECK (units_in_stock >= 0) DEFAULT 0
 );
 
 CREATE TABLE public.buyers(
