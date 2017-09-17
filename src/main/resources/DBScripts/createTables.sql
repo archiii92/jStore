@@ -1,18 +1,18 @@
 DROP TABLE IF EXISTS public.order_details;
-DROP TABLE IF EXISTS public.orders;
-DROP TABLE IF EXISTS public.products;
-DROP TABLE IF EXISTS public.buyers;
-DROP TABLE IF EXISTS public.sellers;
+DROP TABLE IF EXISTS public.orders CASCADE;
+DROP TABLE IF EXISTS public.products CASCADE;
+DROP TABLE IF EXISTS public.buyers CASCADE;
+DROP TABLE IF EXISTS public.sellers CASCADE;
 
 CREATE TABLE public.products(
-	product_id uuid PRIMARY KEY,
-    product_name text CHECK (product_name != '') UNIQUE NOT NULL,
+	id uuid PRIMARY KEY,
+    name text CHECK (name != '') UNIQUE NOT NULL,
     unit_price numeric(10,2) CHECK (unit_price >= 0) DEFAULT 0,
     units_in_stock integer CHECK (units_in_stock >= 0) DEFAULT 0
 );
 
 CREATE TABLE public.buyers(
-	buyer_id uuid PRIMARY KEY,
+	id uuid PRIMARY KEY,
     first_name text CHECK (first_name != ''),
     last_name text CHECK (last_name != ''),
     birth_date date,
@@ -25,7 +25,7 @@ CREATE TABLE public.buyers(
 );
 
 CREATE TABLE public.sellers(
-	seller_id uuid PRIMARY KEY,
+	id uuid PRIMARY KEY,
     company_name text CHECK (company_name != ''),
     contact_name text CHECK (contact_name != ''),
     contact_title text CHECK (contact_title != ''),
@@ -37,15 +37,15 @@ CREATE TABLE public.sellers(
 );
 
 CREATE TABLE public.orders(
-	order_id uuid PRIMARY KEY,
-    buyer_id uuid REFERENCES public.buyers ON DELETE CASCADE,
-    seller_id uuid REFERENCES public.sellers ON DELETE CASCADE,
+	id uuid PRIMARY KEY,
+    buyer_id uuid REFERENCES public.buyers(id) ON DELETE CASCADE,
+    seller_id uuid REFERENCES public.sellers(id) ON DELETE CASCADE,
     order_date time
 );
 
 CREATE TABLE public.order_details(
-	product_id uuid REFERENCES public.products ON DELETE CASCADE,
-    order_id uuid REFERENCES public.orders ON DELETE CASCADE,
+	product_id uuid REFERENCES public.products(id) ON DELETE CASCADE,
+    order_id uuid REFERENCES public.orders(id) ON DELETE CASCADE,
     quantity integer CHECK (quantity > 0),
     discount integer CHECK (discount >= 0 AND discount <= 100),
     PRIMARY KEY (product_id, order_id)
