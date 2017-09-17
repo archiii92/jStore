@@ -7,7 +7,7 @@ import javax.persistence.TemporalType;
 import java.util.Date;
 
 @Entity
-@Table(name = "buyers", schema = "public")
+@Table(schema = "public", name = "buyers")
 public class Buyer extends AbstractBaseEntity {
 
     private String firstName;
