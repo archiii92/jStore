@@ -1,4 +1,8 @@
-DROP TABLE IF EXISTS public.products, public.buyers, public.sellers, public.orders, public.order_details;
+DROP TABLE IF EXISTS public.order_details;
+DROP TABLE IF EXISTS public.orders;
+DROP TABLE IF EXISTS public.products;
+DROP TABLE IF EXISTS public.buyers;
+DROP TABLE IF EXISTS public.sellers;
 
 CREATE TABLE public.products(
 	product_id uuid PRIMARY KEY,
@@ -16,13 +20,15 @@ CREATE TABLE public.buyers(
     city text CHECK (city != ''),
     region text,
     country text CHECK (country != ''),
-    home_phone text
+    home_phone text,
+    email text
 );
 
 CREATE TABLE public.sellers(
 	seller_id uuid PRIMARY KEY,
-    first_name text CHECK (first_name != ''),
-    last_name text CHECK (last_name != ''),
+    company_name text CHECK (company_name != ''),
+    contact_name text CHECK (contact_name != ''),
+    contact_title text CHECK (contact_title != ''),
     address text CHECK (address != ''),
     city text CHECK (city != ''),
     region text,
