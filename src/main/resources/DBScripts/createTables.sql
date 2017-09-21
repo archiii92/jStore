@@ -40,7 +40,7 @@ CREATE TABLE public.orders(
 	id uuid PRIMARY KEY,
     buyer_id uuid REFERENCES public.buyers(id) ON DELETE CASCADE,
     seller_id uuid REFERENCES public.sellers(id) ON DELETE CASCADE,
-    order_date time
+    order_date timestamp
 );
 
 CREATE TABLE public.order_details(

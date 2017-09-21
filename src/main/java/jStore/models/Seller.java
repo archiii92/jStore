@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "public", name = "sellers")
+@Table(schema = "public")
 public class Seller extends AbstractBaseEntity {
 
     private String companyName;
