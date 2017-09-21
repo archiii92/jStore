@@ -1,13 +1,12 @@
 package jStore;
 
-import jStore.configuration.dataConfiguration;
-import jStore.configuration.webConfiguration;
+import jStore.configuration.jStoreConfiguration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class jStoreInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{dataConfiguration.class, webConfiguration.class};
+        return new Class[]{jStoreConfiguration.class};
     }
 
     @Override

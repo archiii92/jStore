@@ -1,11 +1,5 @@
-# Frontend Development:
- 
- - Install Node.js® and npm if they are not already on your machine.
- 
- - Install the Angular CLI globally - "npm install -g @angular/cli".
- 
- - Build Angular project - "ng build".
-   You must been in ..\jStore\src\main\ngapp folder.
-   Builded app will be placed in ..\jStore\src\main\webapp\ng folder.
-   
- - For development exec - "ng serve --open"
+# jStore - it is a place for you!
+Developed on Java with Love.
+
+# Spring MVC + Hibernate + Angular 4(comming soon!)
+A sample project to demonstrate how a web app can be built using a Spring MVC / Angular 4 stack.

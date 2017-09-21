@@ -11,7 +11,7 @@ public class PhysicalNamingStrategyImpl extends PhysicalNamingStrategyStandardIm
 
     public static final PhysicalNamingStrategyImpl INSTANCE = new PhysicalNamingStrategyImpl();
 
-    protected static String addUnderscores(String name) {
+    private static String addUnderscores(String name) {
         final StringBuilder buf = new StringBuilder(name.replace('.', '_'));
         for (int i = 1; i < buf.length() - 1; i++) {
             if (
