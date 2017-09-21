@@ -3,6 +3,8 @@ package jStore.repositories;
 import jStore.models.Seller;
 import org.springframework.data.repository.CrudRepository;
 
-public interface SellerRepository extends CrudRepository<Seller, Long> {
+import java.util.UUID;
+
+public interface SellerRepository extends CrudRepository<Seller, UUID> {
 
 }
