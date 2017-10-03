@@ -50,13 +50,13 @@ CREATE TABLE public.orders(
 CREATE TABLE public.order_details(
 	product_id uuid REFERENCES public.products(id) ON DELETE CASCADE,
     order_id uuid REFERENCES public.orders(id) ON DELETE CASCADE,
-    quantity integer CHECK (quantity > 0),
+    quantity serial,
     PRIMARY KEY (product_id, order_id)
 );
 
 CREATE TABLE public.discounts(
 	id uuid PRIMARY KEY,
-    discount integer CHECK (discount > 0)
+    discount smallserial
 );
 
 CREATE TABLE public.personal_buyer_discounts(
@@ -65,10 +65,10 @@ CREATE TABLE public.personal_buyer_discounts(
 
 CREATE TABLE public.product_quantity_discounts(
 	product_id uuid REFERENCES public.products(id) ON DELETE CASCADE,
-	minimum_quantity integer CHECK (minimum_quantity > 0)
+	minimum_quantity serial
 ) INHERITS (public.discounts);
 
-CREATE TABLE public.time_discounts(
+CREATE TABLE public.temporary_discounts(
 	valid_from date,
 	valid_to date CHECK (valid_to > valid_from)
 ) INHERITS (public.discounts);

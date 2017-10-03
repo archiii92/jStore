@@ -27,13 +27,13 @@ INSERT INTO public.orders VALUES ('0cd126c5-b41b-41e7-abd9-6cfa4887479a', 'e3269
 
 SELECT * FROM public.orders;
 
-INSERT INTO public.order_details VALUES ('d2720e91-3ded-49e1-b684-273b0af50fda', '3f02e422-f763-4495-ab0a-4b5d5b80385d', 1, 0);
-INSERT INTO public.order_details VALUES ('8915ea51-4650-497f-b7ae-3a08231933eb', '3f02e422-f763-4495-ab0a-4b5d5b80385d', 1, 0);
-INSERT INTO public.order_details VALUES ('6be1377b-b144-4219-90ae-5431b96e7ca6', '56ebc4c1-fb30-4c91-8c2f-86e33d4a719b', 3, 5);
-INSERT INTO public.order_details VALUES ('79e75010-88f6-427c-8259-899d37b209b2', 'ab0f0a6b-d9ab-4b5c-8828-cc8b07539c35', 1, 0);
-INSERT INTO public.order_details VALUES ('d2720e91-3ded-49e1-b684-273b0af50fda', 'ab0f0a6b-d9ab-4b5c-8828-cc8b07539c35', 1, 0);
-INSERT INTO public.order_details VALUES ('26ba4317-3751-4863-a760-3d22828554f5', '3877732d-b315-4a45-b616-a7a09d5e7896', 5, 7);
-INSERT INTO public.order_details VALUES ('8915ea51-4650-497f-b7ae-3a08231933eb', '0cd126c5-b41b-41e7-abd9-6cfa4887479a', 10, 10);
+INSERT INTO public.order_details VALUES ('d2720e91-3ded-49e1-b684-273b0af50fda', '3f02e422-f763-4495-ab0a-4b5d5b80385d', 1);
+INSERT INTO public.order_details VALUES ('8915ea51-4650-497f-b7ae-3a08231933eb', '3f02e422-f763-4495-ab0a-4b5d5b80385d', 1);
+INSERT INTO public.order_details VALUES ('6be1377b-b144-4219-90ae-5431b96e7ca6', '56ebc4c1-fb30-4c91-8c2f-86e33d4a719b', 3);
+INSERT INTO public.order_details VALUES ('79e75010-88f6-427c-8259-899d37b209b2', 'ab0f0a6b-d9ab-4b5c-8828-cc8b07539c35', 1);
+INSERT INTO public.order_details VALUES ('d2720e91-3ded-49e1-b684-273b0af50fda', 'ab0f0a6b-d9ab-4b5c-8828-cc8b07539c35', 1);
+INSERT INTO public.order_details VALUES ('26ba4317-3751-4863-a760-3d22828554f5', '3877732d-b315-4a45-b616-a7a09d5e7896', 5);
+INSERT INTO public.order_details VALUES ('8915ea51-4650-497f-b7ae-3a08231933eb', '0cd126c5-b41b-41e7-abd9-6cfa4887479a', 10);
 
 SELECT * FROM public.order_details;
 
@@ -51,12 +51,12 @@ INSERT INTO public.product_quantity_discounts VALUES ('c713f9fb-be99-46c1-94d9-1
 
 SELECT * FROM public.product_quantity_discounts;
 
-INSERT INTO public.time_discounts VALUES ('685da6d4-e75c-43df-a519-bffa2c36438d', 5, '2017-10-5', '2017-10-18');
-INSERT INTO public.time_discounts VALUES ('615228aa-ea0b-4680-afce-659e612b4a76', 10, '2017-10-19', '2017-10-23');
-INSERT INTO public.time_discounts VALUES ('e45ce204-dd12-4368-914b-9f49e2eee834', 2, '2017-10-1', '2017-10-31');
-INSERT INTO public.time_discounts VALUES ('e9ff7294-6aeb-4386-90c1-12ee9b6b6280', 15, '2017-10-24', '2017-10-30');
+INSERT INTO public.temporary_discounts VALUES ('685da6d4-e75c-43df-a519-bffa2c36438d', 5, '2017-10-5', '2017-10-18');
+INSERT INTO public.temporary_discounts VALUES ('615228aa-ea0b-4680-afce-659e612b4a76', 10, '2017-10-19', '2017-10-23');
+INSERT INTO public.temporary_discounts VALUES ('e45ce204-dd12-4368-914b-9f49e2eee834', 2, '2017-10-1', '2017-10-31');
+INSERT INTO public.temporary_discounts VALUES ('e9ff7294-6aeb-4386-90c1-12ee9b6b6280', 15, '2017-10-24', '2017-10-30');
 
-SELECT * FROM public.time_discounts;
+SELECT * FROM public.temporary_discounts;
 
 
 
