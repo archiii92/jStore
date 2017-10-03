@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(schema = "public")
 public class Buyer extends AbstractBaseEntity {
 
     private String firstName;

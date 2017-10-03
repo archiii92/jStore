@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "public")
 public class Product extends AbstractBaseEntity {
 
     private String name;

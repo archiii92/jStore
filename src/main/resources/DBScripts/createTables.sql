@@ -3,6 +3,10 @@ DROP TABLE IF EXISTS public.orders CASCADE;
 DROP TABLE IF EXISTS public.products CASCADE;
 DROP TABLE IF EXISTS public.buyers CASCADE;
 DROP TABLE IF EXISTS public.sellers CASCADE;
+DROP TABLE IF EXISTS public.personal_buyer_discounts;
+DROP TABLE IF EXISTS public.product_quantity_discounts;
+DROP TABLE IF EXISTS public.time_discounts;
+DROP TABLE IF EXISTS public.discounts;
 
 CREATE TABLE public.products(
 	id uuid PRIMARY KEY,
@@ -47,6 +51,24 @@ CREATE TABLE public.order_details(
 	product_id uuid REFERENCES public.products(id) ON DELETE CASCADE,
     order_id uuid REFERENCES public.orders(id) ON DELETE CASCADE,
     quantity integer CHECK (quantity > 0),
-    discount integer CHECK (discount >= 0 AND discount <= 100),
     PRIMARY KEY (product_id, order_id)
 );
+
+CREATE TABLE public.discounts(
+	id uuid PRIMARY KEY,
+    discount integer CHECK (discount > 0)
+);
+
+CREATE TABLE public.personal_buyer_discounts(
+	buyer_id uuid REFERENCES public.buyers(id) ON DELETE CASCADE
+) INHERITS (public.discounts);
+
+CREATE TABLE public.product_quantity_discounts(
+	product_id uuid REFERENCES public.products(id) ON DELETE CASCADE,
+	minimum_quantity integer CHECK (minimum_quantity > 0)
+) INHERITS (public.discounts);
+
+CREATE TABLE public.time_discounts(
+	valid_from date,
+	valid_to date CHECK (valid_to > valid_from)
+) INHERITS (public.discounts);

@@ -4,20 +4,16 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(schema = "public")
 public class Order extends AbstractBaseEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @PrimaryKeyJoinColumn
-//    @Column(name = "buyer_id")
-//    private Buyer buyer;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Buyer buyer;
 
-//    @OneToOne(fetch = FetchType.EAGER,targetEntity = Seller.class)
-//    @PrimaryKeyJoinColumn
-//    private Seller seller;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Seller seller;
 
     public Date getOrderDate() {
         return orderDate;
@@ -27,19 +23,19 @@ public class Order extends AbstractBaseEntity {
         this.orderDate = orderDate;
     }
 
-//    public Buyer getBuyer() {
-//        return buyer;
-//    }
-//
-//    public void setBuyer(Buyer buyer) {
-//        this.buyer = buyer;
-//    }
+    public Buyer getBuyer() {
+        return buyer;
+    }
 
-//    public Seller getSeller() {
-//        return seller;
-//    }
-//
-//    public void setSeller(Seller seller) {
-//        this.seller = seller;
-//    }
+    public void setBuyer(Buyer buyer) {
+        this.buyer = buyer;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
+    }
 }
