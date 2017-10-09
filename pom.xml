@@ -72,19 +72,23 @@
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.0.0</version>
-                    <configuration>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.5.1</version>
                     <configuration>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
+                        <excludes>
+                            <exclude>ngapp/**</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <configuration>
+                        <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+                        <warSourceExcludes>ngapp/**</warSourceExcludes>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -107,3 +111,6 @@
 </project>
 
         <!-- mvn clean install tomcat7:run-war -->
+
+        <!-- mvn clean install tomcat7:redeploy -->
+

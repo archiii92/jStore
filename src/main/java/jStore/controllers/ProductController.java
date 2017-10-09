@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(path="/product")
+@RequestMapping(path="/api/product")
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;

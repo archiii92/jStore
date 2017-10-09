@@ -3,10 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>JStore</title>
-    <base href="/">
+    <script>document.write('<base href="' + document.location + '" />');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <j-store-app>Загрузка...</j-store-app>
 </body>
 </html>
+
+
+<!-- <base href="."> For Tomcat deploy -->
+
+<!-- <script>document.write('<base href="' + document.location + '" />');</script> For local use -->
+
+<!-- <base href="/"> For ng serve -->

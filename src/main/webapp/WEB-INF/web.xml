@@ -1,0 +1,15 @@
+<web-app>
+
+    <display-name>jStore</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.html</url-pattern>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+
+</web-app>
