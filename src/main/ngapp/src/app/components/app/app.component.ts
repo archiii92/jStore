@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'j-store-app',
@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'jStore - it is a store for you!';
+    title = 'jStore - это магазин для тебя!';
 }

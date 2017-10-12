@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(path = "/seller")
+@RequestMapping(path = "/api/seller")
 public class SellerController {
     @Autowired
     private SellerRepository sellerRepository;
