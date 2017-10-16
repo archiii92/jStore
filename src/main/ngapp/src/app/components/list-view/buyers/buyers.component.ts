@@ -6,7 +6,7 @@ import { BuyerService } from '../../../services/buyer.service';
 @Component({
   selector: 'buyers-list',
   templateUrl: './buyers.component.html',
-  styleUrls: ['./buyers.component.css']
+  styleUrls: ['./buyers.component.less']
 })
 export class BuyersListComponent implements OnInit {
   buyers: Buyer[] = [];

@@ -10,7 +10,7 @@ import { ProductService } from '../../../services/product.service';
 @Component({
   selector: 'product-detail',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.less']
 })
 export class ProductDetailComponent implements OnInit {
 

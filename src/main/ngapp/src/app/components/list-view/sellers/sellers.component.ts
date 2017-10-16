@@ -6,7 +6,7 @@ import { SellerService } from '../../../services/seller.service';
 @Component({
   selector: 'sellers-list',
   templateUrl: './sellers.component.html',
-  styleUrls: ['./sellers.component.css']
+  styleUrls: ['./sellers.component.less']
 })
 export class SellersListComponent implements OnInit {
   sellers: Seller[] = [];

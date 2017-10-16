@@ -10,7 +10,7 @@ import { SellerService } from '../../../services/seller.service';
 @Component({
   selector: 'seller-detail',
   templateUrl: './seller.component.html',
-  styleUrls: ['./seller.component.css']
+  styleUrls: ['./seller.component.less']
 })
 export class SellerDetailComponent implements OnInit {
 

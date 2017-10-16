@@ -10,7 +10,7 @@ import { BuyerService } from '../../../services/buyer.service';
 @Component({
   selector: 'buyer-detail',
   templateUrl: './buyer.component.html',
-  styleUrls: ['./buyer.component.css']
+  styleUrls: ['./buyer.component.less']
 })
 export class BuyerDetailComponent implements OnInit {
 
