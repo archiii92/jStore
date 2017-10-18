@@ -24,7 +24,10 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "assets": [
+        "assets"
+      ]
     }
   ],
   "lint": [

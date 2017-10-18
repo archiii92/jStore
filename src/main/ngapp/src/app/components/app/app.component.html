@@ -1,8 +1,19 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/products" routerLinkActive="active">Товары</a>
-  <a routerLink="/buyers" routerLinkActive="active">Покупатели</a>
-  <a routerLink="/sellers" routerLinkActive="active">Продавцы</a>
-  <a routerLink="/orders" routerLinkActive="active">Покупки</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <nav class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded fd-row">
+      <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">{{appName}}</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" routerLink="/products">Товары</a>
+          <a class="nav-item nav-link" routerLink="/buyers">Покупатели</a>
+          <a class="nav-item nav-link" routerLink="/sellers">Продавцы</a>
+          <a class="nav-item nav-link disabled" routerLink="/orders">Покупки</a>
+        </div>
+      </div>
+  </nav>
+  <div class="container-fluid content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
