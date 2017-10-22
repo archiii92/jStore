@@ -1,9 +1,11 @@
 <div class="container-fluid">
-  <nav class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded fd-row">
-      <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#">{{appName}}</a>
+  <nav class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded">
+      <div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand ml-2" href="#">{{appName}}</a>
+      </div>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" routerLink="/products">Товары</a>
@@ -13,7 +15,7 @@
         </div>
       </div>
   </nav>
-  <div class="container-fluid content">
+  <div class="container-fluid content mt-2">
     <router-outlet></router-outlet>
   </div>
 </div>
