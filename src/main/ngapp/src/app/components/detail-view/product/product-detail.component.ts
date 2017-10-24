@@ -10,8 +10,8 @@ import { ViewModes } from '../../../utils/viewModes';
 
 @Component({
   selector: 'product-detail',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.less']
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.less']
 })
 export class ProductDetailComponent implements OnInit {
 

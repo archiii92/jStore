@@ -1,0 +1,143 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-6 card text-center mx-auto mt-4">
+  <div class="card-block">
+      <h2 class="card-title">{{product.name}}</h2>
+  </div>
+  <div class="row justify-content-around m-0">
+    <div class="list-container">
+      <h4 class="text-muted mb-3">Размеры и вес</h4>
+      <ul class="list-group list-group-flush text-left">
+        <li class="list-group-item">Длина: {{product.length}} мм</li>
+        <li class="list-group-item">Ширина: {{product.width}} мм</li>
+        <li class="list-group-item">Толщина: {{product.thickness}} мм</li>
+        <li class="list-group-item">Вес: {{product.weight}} г</li>
+      </ul>
+    </div>
+    <div class="img-container">
+        <img class="card-img-top" style="max-width: 100%" src="/assets/{{product.imageName}}" alt={{product.name}}>
+    </div>
+    <div class="list-container">
+      <h4 class="text-muted mb-3">Дисплей</h4>
+      <ul class="list-group list-group-flush text-left">
+          <li class="list-group-item">Тип экрана: {{product.display}}</li>
+          <li class="list-group-item">Размер: {{product.displaySize}}"</li>
+          <li class="list-group-item">Разрешение: {{product.resolutionHeight}} x {{product.resolutionWidth}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-block">
+      <p class="card-text">{{product.descriptionLong}}</p>
+  </div>
+  <div class="card-block text-right">
+    <button type="button" class="btn btn-secondary" (click)="goBack()">Назад</button>
+    <!-- <a [routerLink]="['./edit']" role="button" class="btn btn-success">Редактировать</a> -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Редактировать</button>
+    <button type="button" class="btn btn-success disabled tooltip-test" title="Зарегистрируйтесь для покупки">Оформить заказ</button>
+  </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Редактирование товара</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <h5>Описание товара</h5>
+          <div class="row pl-2 pr-2 pt-1 pb-3" style="border-bottom: 1px solid #eceeef;">
+            <div class="col-8">
+              <label for="name">Название: </label>
+              <div class="input-group pb-3">
+                <input id="name" type="text" class="form-control" placeholder="Название" [(ngModel)]="product.name"/>
+              </div>
+              <label for="descriptionShort">Короткое описание: </label>
+              <div class="input-group">
+                <input id="descriptionShort" type="text" class="form-control" placeholder="Короткое описание" [(ngModel)]="product.descriptionShort"/>
+              </div>
+            </div>
+            <div class="col-4">
+              <label for="unitPrice">Цена: </label>
+              <div class="input-group pb-3">
+                <span class="input-group-addon">$</span>
+                <input id="unitPrice" type="text" class="form-control" placeholder="Цена" [(ngModel)]="product.unitPrice"/>
+              </div>
+              <label for="unitsInStock">Кол-во: </label>
+              <div class="input-group">
+                <input id="unitsInStock" type="text" class="form-control" placeholder="Кол-во" [(ngModel)]="product.unitsInStock"/>
+                <span class="input-group-addon">шт</span>
+              </div>
+            </div>
+            <div class="col-12 pt-3">
+              <label for="descriptionLong">Длинное описание: </label>
+              <div class="input-group">
+                <textarea  id="descriptionLong" rows="5" class="form-control" placeholder="Длинное описание" [(ngModel)]="product.descriptionLong"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3">
+          <h5>Размеры и вес</h5>
+          <div class="row pl-2 pr-2 pt-1 pb-3" style="border-bottom: 1px solid #eceeef;">
+              <div class="col-6">
+                <label for="length">Длина: </label>
+                <div class="input-group pb-3">
+                  <input id="length" type="text" class="form-control" placeholder="Длина" [(ngModel)]="product.length"/>
+                  <span class="input-group-addon">мм</span>
+                </div>
+                <label for="width">Ширина: </label>
+                <div class="input-group">
+                  <input id="width" type="text" class="form-control" placeholder="Ширина" [(ngModel)]="product.width"/>
+                  <span class="input-group-addon">мм</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="thickness">Толщина: </label>
+                <div class="input-group pb-3">
+                  <input id="thickness" type="text" class="form-control" placeholder="Толщина" [(ngModel)]="product.thickness"/>
+                  <span class="input-group-addon">мм</span>
+                </div>
+                <label for="weight">Вес: </label>
+                <div class="input-group">
+                  <input id="weight" type="text" class="form-control" placeholder="Вес" [(ngModel)]="product.weight"/>
+                  <span class="input-group-addon">г</span>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="pt-3">
+          <h5>Дисплей</h5>
+          <div class="row pl-2 pr-2 pt-1 pb-3">
+            <div class="col-12">
+              <label for="display">Тип экрана: </label>
+              <div class="input-group">
+                <input id="display" type="text" class="form-control" placeholder="Тип экрана" [(ngModel)]="product.display"/>
+              </div>
+            </div>
+            <div class="col-4 pt-3">
+              <label for="displaySize">Размер: </label>
+              <div class="input-group">
+                <input id="displaySize" type="text" class="form-control" placeholder="Размер" [(ngModel)]="product.displaySize"/>
+                <span class="input-group-addon">"</span>
+              </div>
+            </div>
+            <div class="col-8 pt-3">
+              <label for="resolutionHeight">Разрешение: </label>
+              <div class="input-group">
+                <input id="resolutionHeight" type="text" class="form-control" placeholder="Разрешение по высоте" [(ngModel)]="product.resolutionHeight"/>
+                <span class="input-group-addon">X</span>
+                <input id="resolutionWidth" type="text" class="form-control" placeholder="Разрешение по ширине" [(ngModel)]="product.resolutionWidth"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary disabled" (click)="save()">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</div>

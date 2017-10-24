@@ -11,12 +11,13 @@ import { SellerService } from '../services/seller.service';
 import { OrderService } from '../services/order.service';
 import { ProductService } from '../services/product.service';
 
-import { ProductsListComponent } from '../components/list-view/products/products.component';
-import { BuyersListComponent } from '../components/list-view//buyers/buyers.component';
-import { SellersListComponent } from '../components/list-view/sellers/sellers.component';
-import { ProductDetailComponent } from '../components/detail-view/product/product.component';
-import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
-import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
+import { ProductsListComponent } from '../components/list-view/product/products-list.component';
+import { ProductDetailComponent } from '../components/detail-view/product/product-detail.component';
+import { ProductEditComponent } from '../components/edit-view/product/product-edit.component';
+// import { BuyersListComponent } from '../components/list-view//buyer/buyers.component';
+// import { SellersListComponent } from '../components/list-view/seller/sellers.component';
+// import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
+// import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
 
 @NgModule({
   imports: [
@@ -28,11 +29,12 @@ import { SellerDetailComponent } from '../components/detail-view/seller/seller.c
   declarations: [
     AppComponent,
     ProductsListComponent,
-    BuyersListComponent,
-    SellersListComponent,
     ProductDetailComponent,
-    BuyerDetailComponent,
-    SellerDetailComponent
+    ProductEditComponent
+    // BuyersListComponent,
+    // SellersListComponent,
+    // BuyerDetailComponent,
+    // SellerDetailComponent
   ],
   providers: [
     ProductService,

@@ -1,21 +1,43 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProductsListComponent } from '../components/list-view/products/products.component';
-import { BuyersListComponent } from '../components/list-view//buyers/buyers.component';
-import { SellersListComponent } from '../components/list-view/sellers/sellers.component';
-import { ProductDetailComponent } from '../components/detail-view/product/product.component';
-import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
-import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
+import { ProductsListComponent } from '../components/list-view/product/products-list.component';
+import { ProductDetailComponent } from '../components/detail-view/product/product-detail.component';
+import { ProductEditComponent } from '../components/edit-view/product/product-edit.component';
+// import { BuyersListComponent } from '../components/list-view//buyers/buyers.component';
+// import { SellersListComponent } from '../components/list-view/sellers/sellers.component';
+// import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
+// import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/products', pathMatch: 'full' },
-  { path: 'products',  component: ProductsListComponent },
-  { path: 'buyers',  component: BuyersListComponent },
-  { path: 'sellers',  component: SellersListComponent },
-  { path: 'product/:id', component: ProductDetailComponent },
-  { path: 'buyer/:id', component: BuyerDetailComponent },
-  { path: 'seller/:id', component: SellerDetailComponent }
+  { 
+    path: '',
+    redirectTo: 'products',
+    pathMatch: 'full'
+  },
+  { 
+    path: 'products',
+    component: ProductsListComponent
+  },
+  {
+    path: 'products/:id',
+    component: ProductDetailComponent
+    // children: [
+    //   { 
+    //     path: 'edit',
+    //     component: ProductEditComponent
+    //   }
+    // ]
+  },
+  { 
+    path: 'products/new',
+    component: ProductEditComponent
+  },
+  // { path: 'buyers',  component: BuyersListComponent },
+  // { path: 'sellers',  component: SellersListComponent },
+
+  // { path: 'buyer/:id', component: BuyerDetailComponent },
+  // { path: 'seller/:id', component: SellerDetailComponent }
 ];
 
 @NgModule({
