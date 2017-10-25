@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ProductsListComponent } from '../components/list-view/product/products-list.component';
 import { ProductDetailComponent } from '../components/detail-view/product/product-detail.component';
-import { ProductEditComponent } from '../components/edit-view/product/product-edit.component';
+import { ProductModalComponent } from '../components/edit-view/product/product-modal.component';
 // import { BuyersListComponent } from '../components/list-view//buyers/buyers.component';
 // import { SellersListComponent } from '../components/list-view/sellers/sellers.component';
 // import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
@@ -21,17 +21,21 @@ const routes: Routes = [
   },
   {
     path: 'products/:id',
-    component: ProductDetailComponent
-    // children: [
-    //   { 
-    //     path: 'edit',
-    //     component: ProductEditComponent
-    //   }
-    // ]
+    component: ProductDetailComponent,
+    children: [
+      { 
+        path: 'edit',
+        component: ProductModalComponent
+      },
+      { 
+        path: 'purchase',
+        component: ProductModalComponent
+      }
+    ]
   },
   { 
     path: 'products/new',
-    component: ProductEditComponent
+    component: ProductModalComponent
   },
   // { path: 'buyers',  component: BuyersListComponent },
   // { path: 'sellers',  component: SellersListComponent },

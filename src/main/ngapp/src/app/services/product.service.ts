@@ -31,14 +31,18 @@ export class ProductService {
     return Promise.resolve(PRODUCTS.find(x => x.id === id));
   }
 
-  // update(hero: Hero): Promise<Hero> {
-  //   const url = `${this.heroesUrl}/${hero.id}`;
-  //   return this.http
-  //     .put(url, JSON.stringify(hero), {headers: this.headers})
-  //     .toPromise()
-  //     .then(() => hero)
-  //     .catch(this.handleError);
-  // }
+  update(product: Product): Promise<Product> {
+    //const url = `${this.url}/${product.id}`;
+    // return this.http
+    //   .put(url, JSON.stringify(product), {headers: this.headers})
+    //   .toPromise()
+    //   .then(() => product)
+    //   .catch(this.handleError);
+    var oldProduct = PRODUCTS.find(x => x.id === product.id);
+    var ind = PRODUCTS.indexOf(oldProduct);
+    PRODUCTS[ind] = product;
+    return Promise.resolve(product);
+  }
 
   // create(name: string): Promise<Hero> {
   //   return this.http

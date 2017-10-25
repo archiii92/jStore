@@ -8,7 +8,7 @@
           <h4 class="card-title">{{product.name}}</h4>
           <h6 class="card-subtitle mb-3 text-muted">Цена от {{product.unitPrice}}$</h6>
           <p class="card-text">{{product.descriptionShort}}</p>
-          <a [routerLink]="['/products/', product.id]" role="button" class="btn btn-primary">Подробнее</a>
+          <button type="button" class="btn btn-primary" [routerLink]="['/products/', product.id]">Подробнее</button>
         </div>
         <div class="card-footer text-left">
           <small *ngIf="product.unitsInStock" class="text-muted">Осталось: {{product.unitsInStock}} штук</small>

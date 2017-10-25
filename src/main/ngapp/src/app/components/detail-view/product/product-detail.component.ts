@@ -7,6 +7,7 @@ import 'rxjs/add/operator/switchMap';
 import { Product } from '../../../entities/product';
 import { ProductService } from '../../../services/product.service';
 import { ViewModes } from '../../../utils/viewModes';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'product-detail',
@@ -15,26 +16,29 @@ import { ViewModes } from '../../../utils/viewModes';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input() product: Product;
+  product: Product
   mode: ViewModes;
+
+  public static updateProduct: Subject<boolean> = new Subject();
 
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
     private location: Location
-  ) {}
+  ) {
+    ProductDetailComponent.updateProduct.subscribe(res => {
+      this.route.paramMap
+      .switchMap((params: ParamMap) => {
+          return this.productService.getProduct(params.get('id'));
+      })
+      .subscribe(product => this.product = product);
+   });
+  }
 
   ngOnInit(): void {
     this.route.paramMap
       .switchMap((params: ParamMap) => {
-         const id = params.get('id');
-        // if (id === 'new'){
-        //   this.mode = ViewModes.New;
-        //   return Promise.resolve(new Product());
-        // } else {
-        //   this.mode = ViewModes.Edit;
-          return this.productService.getProduct(id);
-        //}
+          return this.productService.getProduct(params.get('id'));
       })
       .subscribe(product => this.product = product);
   }
