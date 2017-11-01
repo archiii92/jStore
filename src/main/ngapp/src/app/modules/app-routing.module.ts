@@ -17,7 +17,13 @@ const routes: Routes = [
   },
   { 
     path: 'products',
-    component: ProductsListComponent
+    component: ProductsListComponent,
+    children: [
+      { 
+        path: 'new',
+        component: ProductModalComponent
+      }
+    ]
   },
   {
     path: 'products/:id',
@@ -27,16 +33,13 @@ const routes: Routes = [
         path: 'edit',
         component: ProductModalComponent
       },
-      { 
-        path: 'purchase',
-        component: ProductModalComponent
-      }
+      // { 
+      //   path: 'purchase',
+      //   component: ProductModalComponent
+      // }
     ]
   },
-  { 
-    path: 'products/new',
-    component: ProductModalComponent
-  },
+
   // { path: 'buyers',  component: BuyersListComponent },
   // { path: 'sellers',  component: SellersListComponent },
 

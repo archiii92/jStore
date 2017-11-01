@@ -2,14 +2,14 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="exampleModalLabel">Редактирование товара</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ mode === 1 ? 'Редактирование' : 'Создание' }} товара</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div>
-          <h5>Описание товара</h5>
+          <h5>Описание</h5>
           <div class="row pl-2 pr-2 pt-1 pb-3" style="border-bottom: 1px solid #eceeef;">
             <div class="col-8">
               <label for="name">Название: </label>
@@ -25,6 +25,7 @@
               <label for="unitPrice">Цена: </label>
               <div class="input-group pb-3">
                 <span class="input-group-addon">$</span>
+                <span class="input-group-addon">0.00</span>
                 <input id="unitPrice" type="text" class="form-control" placeholder="Цена" [(ngModel)]="product.unitPrice"/>
               </div>
               <label for="unitsInStock">Кол-во: </label>

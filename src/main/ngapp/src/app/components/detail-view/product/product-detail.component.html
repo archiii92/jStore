@@ -24,17 +24,16 @@
       </ul>
     </div>
   </div>
-  <div class="card-block pb-0 pt-1">
+  <div class="card-block pb-0 pt-3">
       <p class="card-text">{{product.descriptionLong}}</p>
   </div>
   <div class="card-block text-right buttons-container">
     <button type="button" class="btn btn-secondary" (click)="goBack()">Назад</button>
     <button type="button" class="btn btn-primary" [routerLink]="['./edit']">Редактировать</button>
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productModal">Редактировать</button> -->
+    <button type="button" class="btn btn-danger" (click)="delete()">Удалить</button>
     <button type="button" class="btn btn-success disabled tooltip-test" title="Зарегистрируйтесь для покупки">Оформить заказ</button>
   </div>
 </div>
 <div>
   <router-outlet></router-outlet>
 </div>
-<!-- <product-modal></product-modal> -->

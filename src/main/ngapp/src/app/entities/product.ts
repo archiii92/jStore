@@ -1,17 +1,17 @@
 export class Product {
-    id: string;
-    name: string;
-    unitPrice: number;
-    descriptionShort: string;
-    descriptionLong: string;
-    unitsInStock: number;
-    imageName: string;
-    length: number;
-    width: number;
-    thickness: number;
-    weight: number;
-    display: string;
-    displaySize: number;
-    resolutionHeight: number;
-    resolutionWidth: number;
+    id: string = null;
+    name: string = null;
+    unitPrice: number = null;
+    descriptionShort: string = null;
+    descriptionLong: string = null;
+    unitsInStock: number = null;
+    imageName: string = null;
+    length: number = null;
+    width: number = null;
+    thickness: number = null;
+    weight: number = null;
+    display: string = null;
+    displaySize: number = null;
+    resolutionHeight: number = null;
+    resolutionWidth: number = null;
 }

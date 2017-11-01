@@ -6,10 +6,12 @@ import 'rxjs/add/operator/switchMap';
 import "jquery";
 declare var $: any;
 
-import { Product } from '../../../entities/product';
 import { ProductService } from '../../../services/product.service';
+import { Product } from '../../../entities/product';
 import { ViewModes } from '../../../utils/viewModes';
+
 import { ProductDetailComponent } from '../../detail-view/product/product-detail.component';
+import { ProductsListComponent } from '../../list-view/product/products-list.component';
 
 @Component({
   selector: 'product-modal',
@@ -17,7 +19,7 @@ import { ProductDetailComponent } from '../../detail-view/product/product-detail
   styleUrls: ['./product-modal.component.less']
 })
 export class ProductModalComponent implements OnInit {
-  originalProduct: Product;
+
   product: Product;
   mode: ViewModes;
   @ViewChild('productModal') productModal:ElementRef;
@@ -41,7 +43,6 @@ export class ProductModalComponent implements OnInit {
         }
       })
       .subscribe(product => {
-        this.originalProduct = product;
         this.product = Object.assign({}, product);
         this.show();
 
@@ -52,11 +53,19 @@ export class ProductModalComponent implements OnInit {
   }
 
   save(): void {
-    this.productService.update(this.product)
-      .then(() => {
-        ProductDetailComponent.updateProduct.next(true);
-        this.hide();
-      });
+    if (this.mode === 1){
+      this.productService.update(this.product)
+        .then(() => {
+          ProductDetailComponent.updateProduct.next(this.product);
+          this.hide();
+        });
+    } else {
+      this.productService.create(this.product)
+        .then(() => {
+          ProductsListComponent.updateProductsList.next(this.product);
+          this.hide();
+        });
+    }
   }
 
   goBack(): void {
