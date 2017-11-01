@@ -1,5 +1,5 @@
     import { Product } from '../app/entities/product';
-       
+
     export const PRODUCTS: Product[] = [
       {
         "id": "8915ea51-4650-497f-b7ae-3a08231933eb",

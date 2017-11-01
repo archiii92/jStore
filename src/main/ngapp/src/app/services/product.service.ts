@@ -32,15 +32,15 @@ export class ProductService {
   }
 
   update(product: Product): Promise<void> {
-    //const url = `${this.url}/${product.id}`;
+    // const url = `${this.url}/${product.id}`;
     // return this.http
     //   .put(url, JSON.stringify(product), {headers: this.headers})
     //   .toPromise()
     //   .then(() => product)
     //   .catch(this.handleError);
-    var oldProduct = PRODUCTS.find(x => x.id === product.id);
-    var ind = PRODUCTS.indexOf(oldProduct);
-    //PRODUCTS[ind] = product;
+    const oldProduct = PRODUCTS.find(x => x.id === product.id);
+    const ind = PRODUCTS.indexOf(oldProduct);
+    // PRODUCTS[ind] = product;
     PRODUCTS.splice(ind, 1, product);
     return Promise.resolve();
   }
@@ -51,11 +51,11 @@ export class ProductService {
     //   .toPromise()
     //   .then(res => res.json().data as Hero)
     //   .catch(this.handleError);
-    product.id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+    product.id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+      const r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
       return v.toString(16);
     });
-    
+
     PRODUCTS.push(product);
     return Promise.resolve();
   }
@@ -66,8 +66,8 @@ export class ProductService {
     //   .toPromise()
     //   .then(() => null)
     //   .catch(this.handleError);
-    var oldProduct = PRODUCTS.find(x => x.id === id);
-    var ind = PRODUCTS.indexOf(oldProduct);
+    const oldProduct = PRODUCTS.find(x => x.id === id);
+    const ind = PRODUCTS.indexOf(oldProduct);
     PRODUCTS.splice(ind, 1);
     return Promise.resolve();
   }

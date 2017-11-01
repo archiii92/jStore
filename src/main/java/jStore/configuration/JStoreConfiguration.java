@@ -22,7 +22,7 @@ import java.util.Map;
 @EnableTransactionManagement
 @EnableWebMvc
 @ComponentScan({"jStore.controllers"})
-public class jStoreConfiguration {
+public class JStoreConfiguration {
 
     @Bean
     public DriverManagerDataSource dataSource() {
@@ -46,7 +46,7 @@ public class jStoreConfiguration {
         entityManagerFactoryBean.setPackagesToScan("jStore.models");
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
 
-        Map<String, Object> jpaProperties = new HashMap<String, Object>();
+        Map<String, Object> jpaProperties = new HashMap<>();
         jpaProperties.put("hibernate.hbm2ddl.auto", "none");
         jpaProperties.put("hibernate.show_sql", "true");
         jpaProperties.put("hibernate.format_sql", "true");

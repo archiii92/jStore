@@ -9,7 +9,7 @@ import { ORDERS } from '../../mock-data/orders-mock';
 @Injectable()
 export class OrderService {
   private url = 'api/order';
-  
+
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) { }

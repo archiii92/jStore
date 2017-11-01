@@ -3,7 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
-import "jquery";
+import 'jquery';
 declare var $: any;
 
 import { ProductService } from '../../../services/product.service';
@@ -30,6 +30,9 @@ export class ProductModalComponent implements OnInit {
     private location: Location
   ) {}
 
+  /**
+   * Set current modal view's product.
+   */
   ngOnInit(): void {
     this.route.parent.paramMap
       .switchMap((params: ParamMap) => {
@@ -46,12 +49,15 @@ export class ProductModalComponent implements OnInit {
         this.product = Object.assign({}, product);
         this.show();
 
-        $(this.productModal.nativeElement).on("hidden.bs.modal", () => {
+        $(this.productModal.nativeElement).on('hidden.bs.modal', () => {
           this.goBack();
         });
       });
   }
 
+  /**
+   * Update or Create product.
+   */
   save(): void {
     if (this.mode === 1){
       this.productService.update(this.product)

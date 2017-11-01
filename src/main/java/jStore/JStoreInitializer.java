@@ -1,12 +1,12 @@
 package jStore;
 
-import jStore.configuration.jStoreConfiguration;
+import jStore.configuration.JStoreConfiguration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class jStoreInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class JStoreInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{jStoreConfiguration.class};
+        return new Class[]{JStoreConfiguration.class};
     }
 
     @Override

@@ -14,12 +14,13 @@ import 'rxjs/add/operator/switchMap';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.less']
 })
+
 export class ProductDetailComponent implements OnInit {
+
+  public static updateProduct: Subject<Product> = new Subject();
 
   product: Product
   mode: ViewModes;
-
-  public static updateProduct: Subject<Product> = new Subject();
 
   constructor(
     private productService: ProductService,
@@ -31,6 +32,9 @@ export class ProductDetailComponent implements OnInit {
    });
   }
 
+  /**
+   * Get Product by product id stored in route parameters.
+   */
   ngOnInit(): void {
     this.route.paramMap
       .switchMap((params: ParamMap) => {
@@ -43,6 +47,9 @@ export class ProductDetailComponent implements OnInit {
     this.location.back();
   }
 
+  /**
+   * Delete current product.
+   */
   delete(): void {
     this.productService.delete(this.product.id).then(() => {
       this.goBack();

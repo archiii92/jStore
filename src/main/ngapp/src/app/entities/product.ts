@@ -1,3 +1,8 @@
+/**
+ * Creates a new Product.
+ * @class
+ */
+
 export class Product {
     id: string = null;
     name: string = null;
