@@ -20,3 +20,6 @@ public class JStoreInitializer extends AbstractAnnotationConfigDispatcherServlet
         return new String[]{"/"};
     }
 }
+
+//TODO: Migrate from angular-cli to webpack 3
+//TODO: Migrate from bootstrap alpha to beta
