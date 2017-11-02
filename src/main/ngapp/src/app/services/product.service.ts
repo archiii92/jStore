@@ -8,18 +8,39 @@ import { PRODUCTS } from '../../mock-data/products-mock';
 
 @Injectable()
 export class ProductService {
-  private url = 'api/product';
+  private url = 'api/products';
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) { }
 
+  fillFakeData(): Product[] {
+    debugger;
+    PRODUCTS.forEach(product => this.create(product));
+    return PRODUCTS;
+  }
+
   getProducts(): Promise<Product[]> {
+
+    return this.http.get(this.url)
+    .toPromise()
+    .then(response => {
+      debugger;
+      return response.json() as Product[]
+    })
+    .then(products => {
+      debugger;
+      if (products.length === 0) return this.fillFakeData(); else return products;    
+    })
+    .catch(this.handleError);
+
+    //if (products.length === 0)
+
     // return this.http.get(this.url + '/all')
     // .toPromise()
     // .then(response => response.json().data as Product[])
     // .catch(this.handleError);
-    return Promise.resolve(PRODUCTS.slice());
+    //return Promise.resolve(PRODUCTS.slice());
   }
 
   getProduct(id: string): Promise<Product> {
@@ -40,24 +61,27 @@ export class ProductService {
     //   .catch(this.handleError);
     const oldProduct = PRODUCTS.find(x => x.id === product.id);
     const ind = PRODUCTS.indexOf(oldProduct);
-    // PRODUCTS[ind] = product;
     PRODUCTS.splice(ind, 1, product);
     return Promise.resolve();
   }
 
-  create(product: Product): Promise<void> {
-    // return this.http
-    //   .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
-    //   .toPromise()
-    //   .then(res => res.json().data as Hero)
-    //   .catch(this.handleError);
-    product.id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-      const r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
-      return v.toString(16);
-    });
+  create(product: Product): Promise<string> {
+    return this.http
+      .post(this.url, JSON.stringify(product), {headers: this.headers})
+      .toPromise()
+      .then(res => {
+        debugger;
+        return res.json();
+      })
+      .catch(this.handleError);
 
-    PRODUCTS.push(product);
-    return Promise.resolve();
+    // product.id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    //   const r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
+    //   return v.toString(16);
+    // });
+
+    // PRODUCTS.push(product);
+    // return Promise.resolve();
   }
 
   delete(id: string): Promise<void> {

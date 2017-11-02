@@ -2,7 +2,6 @@ package jStore.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -13,7 +12,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.persistence.EntityManagerFactory;
 import java.util.HashMap;
@@ -22,8 +20,6 @@ import java.util.Map;
 @Configuration
 @EnableJpaRepositories("jStore.repositories")
 @EnableTransactionManagement
-@EnableWebMvc
-@ComponentScan({"jStore.controllers"})
 @PropertySource("classpath:datasource.properties")
 public class JStoreConfiguration {
 
@@ -48,9 +44,10 @@ public class JStoreConfiguration {
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Map<String, Object> jpaProperties = new HashMap<>();
-        jpaProperties.put("hibernate.hbm2ddl.auto", "none");
+        jpaProperties.put("hibernate.hbm2ddl.auto", "create-drop");
         jpaProperties.put("hibernate.show_sql", "true");
         jpaProperties.put("hibernate.format_sql", "true");
+        jpaProperties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
         jpaProperties.put("hibernate.physical_naming_strategy", "jStore.configuration.PhysicalNamingStrategyImpl");
         entityManagerFactoryBean.setJpaPropertyMap(jpaProperties);
 

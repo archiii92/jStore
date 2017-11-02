@@ -67,7 +67,8 @@ export class ProductModalComponent implements OnInit {
         });
     } else {
       this.productService.create(this.product)
-        .then(() => {
+        .then((id) => {
+          this.product.id = id;
           ProductsListComponent.updateProductsList.next(this.product);
           this.hide();
         });
