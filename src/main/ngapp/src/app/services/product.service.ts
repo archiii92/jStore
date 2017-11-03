@@ -22,25 +22,23 @@ export class ProductService {
 
   getProducts(): Promise<Product[]> {
 
-    return this.http.get(this.url)
-    .toPromise()
-    .then(response => {
-      debugger;
-      return response.json() as Product[]
-    })
-    .then(products => {
-      debugger;
-      if (products.length === 0) return this.fillFakeData(); else return products;    
-    })
-    .catch(this.handleError);
-
-    //if (products.length === 0)
+    // return this.http.get(this.url)
+    // .toPromise()
+    // .then(response => {
+    //   debugger;
+    //   return response.json() as Product[]
+    // })
+    // .then(products => {
+    //   debugger;
+    //   if (products.length === 0) return this.fillFakeData(); else return products;    
+    // })
+    // .catch(this.handleError);
 
     // return this.http.get(this.url + '/all')
     // .toPromise()
     // .then(response => response.json().data as Product[])
     // .catch(this.handleError);
-    //return Promise.resolve(PRODUCTS.slice());
+    return Promise.resolve(PRODUCTS.slice());
   }
 
   getProduct(id: string): Promise<Product> {
@@ -66,22 +64,22 @@ export class ProductService {
   }
 
   create(product: Product): Promise<string> {
-    return this.http
-      .post(this.url, JSON.stringify(product), {headers: this.headers})
-      .toPromise()
-      .then(res => {
-        debugger;
-        return res.json();
-      })
-      .catch(this.handleError);
+    // return this.http
+    //   .post(this.url, JSON.stringify(product), {headers: this.headers})
+    //   .toPromise()
+    //   .then(res => {
+    //     debugger;
+    //     return res.json();
+    //   })
+    //   .catch(this.handleError);
 
-    // product.id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-    //   const r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
-    //   return v.toString(16);
-    // });
+    product.id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+      const r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
+      return v.toString(16);
+    });
 
-    // PRODUCTS.push(product);
-    // return Promise.resolve();
+    PRODUCTS.push(product);
+    return Promise.resolve(product.id );
   }
 
   delete(id: string): Promise<void> {
