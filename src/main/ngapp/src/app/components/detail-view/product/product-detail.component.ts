@@ -14,7 +14,6 @@ import 'rxjs/add/operator/switchMap';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.less']
 })
-
 export class ProductDetailComponent implements OnInit {
 
   public static updateProduct: Subject<Product> = new Subject();
@@ -38,7 +37,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap
       .switchMap((params: ParamMap) => {
-          return this.productService.getProduct(params.get('id'));
+          return this.productService.getById(params.get('id'));
       })
       .subscribe(product => this.product = product);
   }

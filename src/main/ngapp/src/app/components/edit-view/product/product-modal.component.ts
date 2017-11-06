@@ -39,7 +39,7 @@ export class ProductModalComponent implements OnInit {
         const id = params.get('id');
         if (id){
           this.mode = ViewModes.Edit;
-          return this.productService.getProduct(id);
+          return this.productService.getById(id);
         } else {
           this.mode = ViewModes.New;
           return Promise.resolve(new Product());

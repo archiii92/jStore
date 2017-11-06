@@ -9,7 +9,6 @@ import { Subject } from 'rxjs/Subject';
   selector: 'products-list',
   templateUrl: './products-list.component.html'
 })
-
 export class ProductsListComponent implements OnInit {
 
   public static updateProductsList: Subject<Product> = new Subject();
@@ -27,7 +26,7 @@ export class ProductsListComponent implements OnInit {
    * Get all products.
    */
   ngOnInit(): void {
-    this.productService.getProducts()
+    this.productService.getAll()
       .then(products => this.products = products);
   }
 

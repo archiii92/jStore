@@ -18,6 +18,7 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
 // import { SellersListComponent } from '../components/list-view/seller/sellers.component';
 // import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
 // import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
+import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -30,11 +31,12 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
     AppComponent,
     ProductsListComponent,
     ProductDetailComponent,
-    ProductModalComponent
+    ProductModalComponent,
     // BuyersListComponent,
     // SellersListComponent,
     // BuyerDetailComponent,
-    // SellerDetailComponent
+    // SellerDetailComponentб
+    PageNotFoundComponent
   ],
   providers: [
     ProductService,

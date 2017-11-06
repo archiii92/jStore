@@ -3,8 +3,9 @@
  * @class
  */
 
-export class Product {
-    id: string = null;
+import { Entity } from "./entity";
+
+export class Product extends Entity {
     name: string = null;
     unitPrice: number = null;
     descriptionShort: string = null;

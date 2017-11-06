@@ -8,6 +8,7 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
 // import { SellersListComponent } from '../components/list-view/sellers/sellers.component';
 // import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
 // import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
+import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { 
@@ -45,6 +46,7 @@ const routes: Routes = [
 
   // { path: 'buyer/:id', component: BuyerDetailComponent },
   // { path: 'seller/:id', component: SellerDetailComponent }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
