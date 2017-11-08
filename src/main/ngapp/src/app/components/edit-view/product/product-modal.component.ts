@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
-import 'rxjs/add/operator/switchMap';
+import { switchMap } from 'rxjs/operators';
 import 'jquery';
 declare var $: any;
 

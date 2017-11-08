@@ -21,6 +21,9 @@
       }
     ]
   },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false
+  },
   "typedocOptions": {
     "mode": "modules",
     "out": "doc",

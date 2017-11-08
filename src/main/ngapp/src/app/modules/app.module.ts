@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from '../components/app/app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +24,7 @@ import { PageNotFoundComponent } from '../components/page-not-found/page-not-fou
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   declarations: [

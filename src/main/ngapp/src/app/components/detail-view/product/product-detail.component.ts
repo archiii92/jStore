@@ -7,7 +7,7 @@ import { Product } from '../../../entities/product';
 import { ViewModes } from '../../../utils/viewModes';
 
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/switchMap';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'product-detail',
