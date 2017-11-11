@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
 
-import { Buyer } from '../../../entities/buyer';
+import { Buyer } from '../../../model/buyer';
 import { BuyerService } from '../../../services/buyer.service';
 
 @Component({

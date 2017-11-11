@@ -3,7 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { ProductService } from '../../../services/product.service';
-import { Product } from '../../../entities/product';
+import { Product } from '../../../model/product.model';
 import { ViewModes } from '../../../utils/viewModes';
 
 import { Subject } from 'rxjs/Subject';

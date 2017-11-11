@@ -3,7 +3,7 @@
  * @class
  */
 
-import { Entity } from "../entities/entity";
+import { Entity } from "../model/entity";
 
 export class Service<T extends Entity> {
 

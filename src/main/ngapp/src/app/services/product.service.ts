@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Product } from '../entities/product';
+import { Product } from '../model/product.model';
 import { PRODUCTS } from '../../mock-data/products-mock';
 import { Service } from './service';
 

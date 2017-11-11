@@ -1,5 +1,5 @@
 /**
- * Creates a new Product.
+ * Product model.
  * @class
  */
 
@@ -7,7 +7,7 @@ import { Entity } from "./entity";
 
 export class Product extends Entity {
     name: string = null;
-    unitPrice: number = null;
+    price: number = null;
     descriptionShort: string = null;
     descriptionLong: string = null;
     unitsInStock: number = null;

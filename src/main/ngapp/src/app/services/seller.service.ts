@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Seller } from '../entities/seller';
+import { Seller } from '../model/seller';
 import { SELLERS } from '../../mock-data/sellers-mock';
 
 @Injectable()

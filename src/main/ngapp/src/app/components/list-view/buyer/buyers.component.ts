@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Buyer } from '../../../entities/buyer';
+import { Buyer } from '../../../model/buyer';
 import { BuyerService } from '../../../services/buyer.service';
 
 @Component({

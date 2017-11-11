@@ -1,4 +1,4 @@
-    import { Product } from '../app/entities/product';
+    import { Product } from '../app/model/product.model';
 
     export const PRODUCTS: Product[] = [
       {

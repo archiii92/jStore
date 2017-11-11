@@ -1,4 +1,4 @@
-import { Order } from '../app/entities/order';
+import { Order } from '../app/model/order';
 
 export const ORDERS: Order[] = [
   {

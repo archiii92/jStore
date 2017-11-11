@@ -7,7 +7,7 @@ import 'jquery';
 declare var $: any;
 
 import { ProductService } from '../../../services/product.service';
-import { Product } from '../../../entities/product';
+import { Product } from '../../../model/product.model';
 import { ViewModes } from '../../../utils/viewModes';
 
 import { ProductDetailComponent } from '../../detail-view/product/product-detail.component';

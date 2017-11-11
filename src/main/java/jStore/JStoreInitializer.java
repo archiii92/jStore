@@ -21,8 +21,9 @@ public class JStoreInitializer extends AbstractAnnotationConfigDispatcherServlet
     }
 }
 
-//TODO: Migrate from angular-cli to webpack 3
-//TODO: Migrate from bootstrap alpha to beta
-//TODO Language service RUS-ENG
 //TODO Form validation
+//TODO Migrate from Template-driven Forms to Reactive Forms
+
+//TODO Language service RUS-ENG
+//TODO: Migrate from bootstrap alpha to beta
 //TODO Migrate from less to postCSS
