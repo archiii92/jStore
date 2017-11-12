@@ -7,7 +7,7 @@ import { Entity } from "./entity";
 
 export class Product extends Entity {
     name: string = null;
-    price: number = null;
+    unitPrice: number = null;
     descriptionShort: string = null;
     descriptionLong: string = null;
     unitsInStock: number = null;
