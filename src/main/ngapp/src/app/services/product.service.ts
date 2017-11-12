@@ -8,10 +8,10 @@ import { PRODUCTS } from '../../mock-data/products-mock';
 import { Service } from './service';
 
 @Injectable()
-export class ProductService extends Service<Product>{
-  //url = 'api/products';
+export class ProductService extends Service<Product> {
+  // url = 'api/products';
 
-  //private headers = new Headers({'Content-Type': 'application/json'});
+  // private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient) {
     super('api/products', PRODUCTS);
@@ -33,7 +33,7 @@ export class ProductService extends Service<Product>{
   //   // })
   //   // .then(products => {
   //   //   debugger;
-  //   //   if (products.length === 0) return this.fillFakeData(); else return products;    
+  //   //   if (products.length === 0) return this.fillFakeData(); else return products;
   //   // })
   //   // .catch(this.handleError);
 

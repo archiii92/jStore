@@ -19,6 +19,8 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
 // import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
 // import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
+import { CartSummaryComponent } from '../components/cartSummary/cartsummary.component';
+import { Cart } from '../model/cart.model';
 
 @NgModule({
   imports: [
@@ -36,13 +38,15 @@ import { PageNotFoundComponent } from '../components/page-not-found/page-not-fou
     // SellersListComponent,
     // BuyerDetailComponent,
     // SellerDetailComponentб
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CartSummaryComponent
   ],
   providers: [
     ProductService,
     BuyerService,
     SellerService,
-    OrderService
+    OrderService,
+    Cart
   ],
   bootstrap: [ AppComponent ]
 })

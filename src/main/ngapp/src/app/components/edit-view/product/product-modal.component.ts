@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { switchMap } from 'rxjs/operators';
+import 'rxjs/add/operator/switchMap';
 import 'jquery';
 declare var $: any;
 
@@ -22,7 +22,7 @@ export class ProductModalComponent implements OnInit {
 
   product: Product;
   mode: ViewModes;
-  @ViewChild('productModal') productModal:ElementRef;
+  @ViewChild('productModal') productModal: ElementRef;
 
   constructor(
     private productService: ProductService,
@@ -37,7 +37,7 @@ export class ProductModalComponent implements OnInit {
     this.route.parent.paramMap
       .switchMap((params: ParamMap) => {
         const id = params.get('id');
-        if (id){
+        if (id) {
           this.mode = ViewModes.Edit;
           return this.productService.getById(id);
         } else {
@@ -59,7 +59,7 @@ export class ProductModalComponent implements OnInit {
    * Update or Create product.
    */
   save(): void {
-    if (this.mode === 1){
+    if (this.mode === 1) {
       this.productService.update(this.product)
         .then(() => {
           ProductDetailComponent.updateProduct.next(this.product);

@@ -7,7 +7,8 @@ import { Product } from '../../../model/product.model';
 import { ViewModes } from '../../../utils/viewModes';
 
 import { Subject } from 'rxjs/Subject';
-import { switchMap } from 'rxjs/operators';
+import 'rxjs/add/operator/switchMap';
+import { Cart } from '../../../model/cart.model';
 
 @Component({
   selector: 'product-detail',
@@ -18,13 +19,14 @@ export class ProductDetailComponent implements OnInit {
 
   public static updateProduct: Subject<Product> = new Subject();
 
-  product: Product
+  product: Product;
   mode: ViewModes;
 
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private cart: Cart
   ) {
     ProductDetailComponent.updateProduct.subscribe(updatedProduct => {
       this.product = updatedProduct;
@@ -52,6 +54,10 @@ export class ProductDetailComponent implements OnInit {
   delete(): void {
     this.productService.delete(this.product.id).then(() => {
       this.goBack();
-    })
+    });
+  }
+
+  addProductToCart(): void {
+    this.cart.addLine(this.product);
   }
 }

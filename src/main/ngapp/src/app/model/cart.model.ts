@@ -1,15 +1,24 @@
-import { Injectable } from "@angular/core";
-import { Product } from "./product.model";
+import { Injectable } from '@angular/core';
+import { Product } from './product.model';
 
 @Injectable()
+export class CartLine {
+
+    constructor(public product: Product, public quantity: number) {}
+
+    get lineTotal() {
+        return this.quantity * this.product.unitPrice;
+    }
+}
+
 export class Cart {
-    public lines: CartLine[] = [];
-    public itemCount: number = 0;
-    public cartPrice: number = 0;
+    public lines: CartLine[];
+    public itemCount: number;
+    public cartPrice: number;
 
     addLine(product: Product, quantity: number = 1) {
-        let line = this.lines.find(line => line.product.id == product.id);
-        if (line != undefined) {
+        const line = this.lines.find(l => l.product.id === product.id);
+        if (line !== undefined) {
             line.quantity += quantity;
         } else {
             this.lines.push(new CartLine(product, quantity));
@@ -18,15 +27,15 @@ export class Cart {
     }
 
     updateQuantity(productId: string, quantity: number = 1) {
-        let line = this.lines.find(line => line.product.id == productId);
-        if (line != undefined) {
+        const line = this.lines.find(l => l.product.id === productId);
+        if (line !== undefined) {
             line.quantity = quantity;
         }
         this.recalculate();
     }
 
     removeLine(productId: string) {
-        let index = this.lines.findIndex(line => line.product.id == productId);
+        const index = this.lines.findIndex(l => l.product.id === productId);
         this.lines.splice(index);
         this.recalculate();
     }
@@ -44,14 +53,5 @@ export class Cart {
             this.itemCount += line.quantity;
             this.cartPrice += (line.quantity * line.product.unitPrice);
         });
-    }
-}
-
-export class CartLine {
-
-    constructor(public product: Product, public quantity: number) {}
-
-    get lineTotal() {
-        return this.quantity * this.product.unitPrice;
     }
 }

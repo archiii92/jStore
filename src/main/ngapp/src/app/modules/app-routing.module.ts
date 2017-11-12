@@ -11,16 +11,16 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { 
+  {
     path: '',
     redirectTo: 'products',
     pathMatch: 'full'
   },
-  { 
+  {
     path: 'products',
     component: ProductsListComponent,
     children: [
-      { 
+      {
         path: 'new',
         component: ProductModalComponent
       }
@@ -30,11 +30,11 @@ const routes: Routes = [
     path: 'products/:id',
     component: ProductDetailComponent,
     children: [
-      { 
+      {
         path: 'edit',
         component: ProductModalComponent
       },
-      // { 
+      // {
       //   path: 'purchase',
       //   component: ProductModalComponent
       // }
