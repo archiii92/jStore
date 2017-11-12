@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/observable/from';
 
-import { Order } from '../model/order';
+import { Order } from '../model/order.model';
 import { ORDERS } from '../../mock-data/orders-mock';
+import { Service } from './service';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class OrderService {
-  private url = 'api/order';
+export class OrderService{
 
-  private headers = new Headers({'Content-Type': 'application/json'});
+//   constructor(private http: HttpClient) {
+//     super('api/order', []);
+//   }
 
-  constructor(private http: Http) { }
+    create(entity: Order): Observable<Order> {
+        entity.id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+            const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
 
-  getOrders(): Promise<Order[]> {
-    return Promise.resolve(ORDERS);
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
-  }
+        //this.fakeEntities.push(entity);
+        return  Observable.from([entity])
+    }
 }

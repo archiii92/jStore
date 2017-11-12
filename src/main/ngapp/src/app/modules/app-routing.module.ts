@@ -11,6 +11,7 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { CartDetailComponent } from '../components/cartDetail/cartDetail.component';
 import { StoreFirstGuard } from '../guards/storeFirst.guard';
+import { CheckoutComponent } from '../components/checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,11 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartDetailComponent,
+    canActivate: [ StoreFirstGuard ]
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
     canActivate: [ StoreFirstGuard ]
   },
   // { path: 'buyers',  component: BuyersListComponent },

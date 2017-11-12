@@ -23,6 +23,7 @@ import { CartSummaryComponent } from '../components/cartSummary/cartsummary.comp
 import { CartDetailComponent } from "../components/cartDetail/cartDetail.component";
 import { CheckoutComponent } from "../components/checkout/checkout.component";
 import { Cart } from '../model/cart.model';
+import { Order } from '../model/order.model';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { Cart } from '../model/cart.model';
     BuyerService,
     SellerService,
     OrderService,
-    Cart
+    Cart,
+    Order
   ],
   bootstrap: [ AppComponent ]
 })
