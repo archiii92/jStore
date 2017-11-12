@@ -1,0 +1,48 @@
+<div class="m-1 mt-3">
+    <h2 class="text-center">Ваша корзина</h2>
+    <table class="table table-bordered table-striped mt-3 ">
+        <thead>
+        <tr>
+            <th>Товар</th>
+            <th class="text-right">Цена за штуку</th>
+            <th class="text-right">Количество</th>
+            <th class="text-right">Итого</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngIf="cart.lines.length === 0">
+            <td colspan="4" class="text-center">
+                Ваша корзина пуста
+            </td>
+        </tr>
+        <tr *ngFor="let line of cart.lines">
+            <td>{{line.product.name}}</td>
+            <td class="text-right">
+                {{line.product.unitPrice | currency:'USD':'symbol':'3.2-2'}}
+            </td>
+            <td class="text-right">
+                <input type="number" class="form-control-sm" style="width:5em" [value]="line.quantity"
+                       (change)="cart.updateQuantity(line.product.id, $event.target.value)"/>
+            </td>
+            <td class="text-right">
+                {{(line.lineTotal) | currency:'USD':'symbol':'3.2-2' }}
+            </td>
+            <td class="text-center">
+                <button class="btn btn-sm btn-danger" (click)="cart.removeLine(line.product.id)">Удалить</button>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Итого:</td>
+            <td class="text-right">
+                {{cart.cartPrice | currency:'USD':'symbol':'3.2-2'}}
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="text-right">
+    <button class="btn btn-primary" routerLink="/products">Продолжить покупки</button>
+    <button class="btn btn-secondary" routerLink="/checkout" [disabled]="cart.lines.length === 0">Оплатить</button>
+</div> 

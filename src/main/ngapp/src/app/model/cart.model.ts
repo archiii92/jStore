@@ -12,9 +12,9 @@ export class CartLine {
 }
 
 export class Cart {
-    public lines: CartLine[];
-    public itemCount: number;
-    public cartPrice: number;
+    public lines: CartLine[] = [];
+    public itemCount = 0;
+    public cartPrice = 0;
 
     addLine(product: Product, quantity: number = 1) {
         const line = this.lines.find(l => l.product.id === product.id);
@@ -36,7 +36,7 @@ export class Cart {
 
     removeLine(productId: string) {
         const index = this.lines.findIndex(l => l.product.id === productId);
-        this.lines.splice(index);
+        this.lines.splice(index, 1);
         this.recalculate();
     }
 

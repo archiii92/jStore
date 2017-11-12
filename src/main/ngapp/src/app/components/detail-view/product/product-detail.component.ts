@@ -57,6 +57,9 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  /**
+   * Add current product to cart.
+   */
   addProductToCart(): void {
     this.cart.addLine(this.product);
   }

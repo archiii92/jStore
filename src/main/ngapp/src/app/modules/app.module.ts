@@ -20,6 +20,8 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
 // import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { CartSummaryComponent } from '../components/cartSummary/cartsummary.component';
+import { CartDetailComponent } from "../components/cartDetail/cartDetail.component";
+import { CheckoutComponent } from "../components/checkout/checkout.component";
 import { Cart } from '../model/cart.model';
 
 @NgModule({
@@ -39,7 +41,9 @@ import { Cart } from '../model/cart.model';
     // BuyerDetailComponent,
     // SellerDetailComponentб
     PageNotFoundComponent,
-    CartSummaryComponent
+    CartSummaryComponent,
+    CartDetailComponent,
+    CheckoutComponent
   ],
   providers: [
     ProductService,

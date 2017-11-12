@@ -9,6 +9,8 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
 // import { BuyerDetailComponent } from '../components/detail-view/buyer/buyer.component';
 // import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
+import { CartDetailComponent } from '../components/cartDetail/cartDetail.component';
+import { StoreFirstGuard } from '../guards/storeFirst.guard';
 
 const routes: Routes = [
   {
@@ -24,7 +26,8 @@ const routes: Routes = [
         path: 'new',
         component: ProductModalComponent
       }
-    ]
+    ],
+    canActivate: [ StoreFirstGuard ]
   },
   {
     path: 'products/:id',
@@ -33,14 +36,15 @@ const routes: Routes = [
       {
         path: 'edit',
         component: ProductModalComponent
-      },
-      // {
-      //   path: 'purchase',
-      //   component: ProductModalComponent
-      // }
-    ]
+      }
+    ],
+    canActivate: [ StoreFirstGuard ]
   },
-
+  {
+    path: 'cart',
+    component: CartDetailComponent,
+    canActivate: [ StoreFirstGuard ]
+  },
   // { path: 'buyers',  component: BuyersListComponent },
   // { path: 'sellers',  component: SellersListComponent },
 
@@ -51,6 +55,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  exports: [ RouterModule ],
+  providers: [ StoreFirstGuard ]
 })
 export class AppRoutingModule {}
