@@ -14,9 +14,8 @@ import { ProductDetailComponent } from '../../detail-view/product/product-detail
 import { ProductsListComponent } from '../../list-view/product/products-list.component';
 
 @Component({
-  selector: 'product-modal',
-  templateUrl: './product-modal.component.html',
-  styleUrls: ['./product-modal.component.less']
+  templateUrl: 'product-modal.component.html',
+  styleUrls: ['product-modal.component.less']
 })
 export class ProductModalComponent implements OnInit {
 
@@ -61,14 +60,14 @@ export class ProductModalComponent implements OnInit {
   save(): void {
     if (this.mode === 1) {
       this.productService.update(this.product)
-        .then(() => {
+        .subscribe(() => {
           ProductDetailComponent.updateProduct.next(this.product);
           this.hide();
         });
     } else {
       this.productService.create(this.product)
-        .then((id) => {
-          this.product.id = id;
+        .subscribe((product) => {
+          this.product.id = product.id;
           ProductsListComponent.updateProductsList.next(this.product);
           this.hide();
         });

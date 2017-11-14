@@ -11,9 +11,8 @@ import 'rxjs/add/operator/switchMap';
 import { Cart } from '../../../model/cart.model';
 
 @Component({
-  selector: 'product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.less']
+  templateUrl: 'product-detail.component.html',
+  styleUrls: ['product-detail.component.less']
 })
 export class ProductDetailComponent implements OnInit {
 
@@ -52,7 +51,7 @@ export class ProductDetailComponent implements OnInit {
    * Delete current product.
    */
   delete(): void {
-    this.productService.delete(this.product.id).then(() => {
+    this.productService.delete(this.product.id).subscribe(() => {
       this.goBack();
     });
   }

@@ -1,20 +1,41 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
 
 import { Product } from '../model/product.model';
-import { PRODUCTS } from '../../mock-data/products-mock';
-import { Service } from './service';
+
+const PROTOCOL = 'http';
+const PORT = 3500;
+const API_URL = 'products';
 
 @Injectable()
-export class ProductService extends Service<Product> {
-  // url = 'api/products';
-
+export class ProductService {
+  private baseUrl: string;
   // private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient) {
-    super('api/products', PRODUCTS);
+    this.baseUrl = PROTOCOL + '://' + location.hostname + ':' + PORT + '/' + API_URL;
+  }
+
+  getAll(): Observable<Array<Product>> {
+    return this.http.get<Array<Product>>(this.baseUrl);
+  }
+
+  getById(id: string): Observable<Product> {
+    return this.http.get<Product>(this.baseUrl + '/' + id);
+  }
+
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl, JSON.stringify(product), { responseType: 'json' });
+  }
+
+  update(product: Product): Observable<Product> {
+    return this.http.put<Product>(this.baseUrl, JSON.stringify(product), { responseType: 'json' });
+  }
+
+  delete(id: string): Observable<void> {
+    return this.http.delete<void>(this.baseUrl + '/' + id);
   }
 
   // fillFakeData(): Product[] {

@@ -20,10 +20,12 @@ import { ProductModalComponent } from '../components/edit-view/product/product-m
 // import { SellerDetailComponent } from '../components/detail-view/seller/seller.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { CartSummaryComponent } from '../components/cartSummary/cartsummary.component';
-import { CartDetailComponent } from "../components/cartDetail/cartDetail.component";
-import { CheckoutComponent } from "../components/checkout/checkout.component";
+import { CartDetailComponent } from '../components/cartDetail/cartDetail.component';
+import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { Cart } from '../model/cart.model';
 import { Order } from '../model/order.model';
+import { AuthService } from '../services/auth.service';
+import { AuthComponent } from '../components/auth/auth.component';
 
 @NgModule({
   imports: [
@@ -44,15 +46,17 @@ import { Order } from '../model/order.model';
     PageNotFoundComponent,
     CartSummaryComponent,
     CartDetailComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AuthComponent
   ],
   providers: [
     ProductService,
-    BuyerService,
-    SellerService,
+    // BuyerService,
+    // SellerService,
     OrderService,
     Cart,
-    Order
+    Order,
+    AuthService
   ],
   bootstrap: [ AppComponent ]
 })

@@ -10,7 +10,7 @@ export class Order extends Entity {
     public state: string;
     public zip: string;
     public country: string;
-    public shipped: boolean = false;
+    public shipped: boolean;
 
     constructor(public cart: Cart) {
         super();
@@ -22,5 +22,5 @@ export class Order extends Entity {
         this.state = this.zip = this.country = null;
         this.shipped = false;
         this.cart.clear();
-    } 
+    }
 }

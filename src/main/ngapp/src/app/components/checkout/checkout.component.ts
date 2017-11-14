@@ -4,7 +4,7 @@ import { OrderService } from '../../services/order.service';
 import { Order } from '../../model/order.model';
 
 @Component({
-    templateUrl: './checkout.component.html'
+    templateUrl: 'checkout.component.html'
 })
 export class CheckoutComponent {
     orderSent = false;

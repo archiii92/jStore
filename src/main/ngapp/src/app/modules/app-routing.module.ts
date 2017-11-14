@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from '../components/page-not-found/page-not-fou
 import { CartDetailComponent } from '../components/cartDetail/cartDetail.component';
 import { StoreFirstGuard } from '../guards/storeFirst.guard';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
+import { AuthComponent } from '../components/auth/auth.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,16 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+    canActivate: [ StoreFirstGuard ]
+  },
+  // {
+  //   path: "admin",
+  //   loadChildren: "app/admin/admin.module#AdminModule",
+  //   canActivate: [ StoreFirstGuard ]
+  // },
+  {
+    path: 'auth',
+    component: AuthComponent,
     canActivate: [ StoreFirstGuard ]
   },
   // { path: 'buyers',  component: BuyersListComponent },

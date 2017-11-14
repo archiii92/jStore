@@ -6,11 +6,10 @@ import 'rxjs/add/observable/from';
 
 import { Order } from '../model/order.model';
 import { ORDERS } from '../../mock-data/orders-mock';
-import { Service } from './service';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class OrderService{
+export class OrderService {
 
 //   constructor(private http: HttpClient) {
 //     super('api/order', []);
@@ -22,7 +21,7 @@ export class OrderService{
             return v.toString(16);
         });
 
-        //this.fakeEntities.push(entity);
-        return  Observable.from([entity])
+        // this.fakeEntities.push(entity);
+        return  Observable.from([entity]);
     }
 }

@@ -7,8 +7,7 @@ import { Subject } from 'rxjs/Subject';
 import { declination } from '../../../utils/declination';
 
 @Component({
-  selector: 'products-list',
-  templateUrl: './products-list.component.html'
+  templateUrl: 'products-list.component.html'
 })
 export class ProductsListComponent implements OnInit {
 
@@ -28,7 +27,7 @@ export class ProductsListComponent implements OnInit {
    */
   ngOnInit(): void {
     this.productService.getAll()
-      .then(products => this.products = products);
+      .subscribe(products => this.products = products);
   }
 
   unitsName(n: number): string {
