@@ -11,7 +11,7 @@ const API_URL = 'login';
 @Injectable()
 export class AuthService {
     private baseUrl: string;
-    auth_token: string;
+    private auth_token: string;
 
     constructor(private http: HttpClient) {
         this.baseUrl = PROTOCOL + '://' + location.hostname + ':' + PORT + '/' + API_URL;
@@ -27,6 +27,10 @@ export class AuthService {
 
     get authenticated(): boolean {
         return this.auth_token !== null;
+    }
+
+    getToken(): string {
+        return this.auth_token;
     }
 
     clear() {

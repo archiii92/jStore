@@ -27,11 +27,11 @@ export class ProductService {
   }
 
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, JSON.stringify(product), { responseType: 'json' });
+    return this.http.post<Product>(this.baseUrl, product);
   }
 
   update(product: Product): Observable<Product> {
-    return this.http.put<Product>(this.baseUrl, JSON.stringify(product), { responseType: 'json' });
+    return this.http.put<Product>(this.baseUrl + '/' + product.id, product);
   }
 
   delete(id: string): Observable<void> {

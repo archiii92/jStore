@@ -26,6 +26,8 @@ import { Cart } from '../model/cart.model';
 import { Order } from '../model/order.model';
 import { AuthService } from '../services/auth.service';
 import { AuthComponent } from '../components/auth/auth.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from '../interceptors/token.interceptor';
 
 @NgModule({
   imports: [
@@ -56,7 +58,12 @@ import { AuthComponent } from '../components/auth/auth.component';
     OrderService,
     Cart,
     Order,
-    AuthService
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [ AppComponent ]
 })

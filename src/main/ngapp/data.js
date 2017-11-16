@@ -2,7 +2,7 @@ module.exports = function () {
     return {  
         products: [
             {
-              "id": "8915ea51-4650-497f-b7ae-3a08231933eb",
+              "id": 1,
               "name": "Apple iPhone X",
               "unitPrice": 999,
               "descriptionShort": "Мы знаем что ты его хочешь",
@@ -19,7 +19,7 @@ module.exports = function () {
               "resolutionWidth": 1125
             },
             {
-              "id": "6be1377b-b144-4219-90ae-5431b96e7ca6",
+              "id": 2,
               "name": "Apple iPhone 8 Plus",
               "unitPrice": 799,
               "descriptionShort": "Когда не хватило на iPhone X",
@@ -36,7 +36,7 @@ module.exports = function () {
               "resolutionWidth": 1080
             },
             {
-              "id": "d2720e91-3ded-49e1-b684-273b0af50fda",
+              "id": 3,
               "name": "Apple iPhone 8",
               "unitPrice": 699,
               "descriptionShort": "За такие деньги - спасибо что хоть iPhone",
@@ -53,7 +53,7 @@ module.exports = function () {
               "resolutionWidth": 750
             },
             {
-              "id": "26ba4317-3751-4863-a760-3d22828554f5",
+              "id": 4,
               "name": "Samsung Galaxy S8",
               "unitPrice": 424,
               "descriptionShort": "Великолепный и безграничный",
@@ -70,7 +70,7 @@ module.exports = function () {
               "resolutionWidth": 1440
             },
             {
-              "id": "79e75010-88f6-427c-8259-899d37b209b2",
+              "id": 5,
               "name": "Samsung Galaxy Note 8",
               "unitPrice": 929,
               "descriptionShort": "Добивайся большего",
