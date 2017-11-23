@@ -13,6 +13,7 @@ import { CartDetailComponent } from '../components/cartDetail/cartDetail.compone
 import { StoreFirstGuard } from '../guards/storeFirst.guard';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { AuthComponent } from '../components/auth/auth.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     children: [
       {
         path: 'new',
-        component: ProductModalComponent
+        component: ProductModalComponent,
+        canActivate: [ AuthGuard ]
       }
     ],
     canActivate: [ StoreFirstGuard ]
@@ -37,7 +39,8 @@ const routes: Routes = [
     children: [
       {
         path: 'edit',
-        component: ProductModalComponent
+        component: ProductModalComponent,
+        canActivate: [ AuthGuard ]
       }
     ],
     canActivate: [ StoreFirstGuard ]
@@ -73,6 +76,6 @@ const routes: Routes = [
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ],
-  providers: [ StoreFirstGuard ]
+  providers: [ StoreFirstGuard, AuthGuard ]
 })
 export class AppRoutingModule {}

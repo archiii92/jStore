@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -11,11 +10,11 @@ const API_URL = 'login';
 @Injectable()
 export class AuthService {
     private baseUrl: string;
-    private auth_token: string;
+    private auth_token: string = null;
 
     constructor(private http: HttpClient) {
         this.baseUrl = PROTOCOL + '://' + location.hostname + ':' + PORT + '/' + API_URL;
-      }
+    }
 
     authenticate(username: string, password: string): Observable<boolean> {
         return this.http.post<LoginResponse>(this.baseUrl, {username: username, password: password})

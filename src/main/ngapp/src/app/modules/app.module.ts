@@ -28,6 +28,7 @@ import { AuthService } from '../services/auth.service';
 import { AuthComponent } from '../components/auth/auth.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../interceptors/token.interceptor';
+import { NotAuthorizedInterceptor } from '../interceptors/notAutorized.interceptor';
 
 @NgModule({
   imports: [
@@ -62,6 +63,11 @@ import { TokenInterceptor } from '../interceptors/token.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: NotAuthorizedInterceptor,
       multi: true
     }
   ],
