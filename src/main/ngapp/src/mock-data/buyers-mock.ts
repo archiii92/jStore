@@ -1,4 +1,4 @@
-import { Buyer } from '../app/model/buyer';
+import { Buyer } from '../app/model/buyer.model';
 
 export const BUYERS: Buyer[] = [
     {

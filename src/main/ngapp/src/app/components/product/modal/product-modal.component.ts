@@ -10,8 +10,8 @@ import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../model/product.model';
 import { ViewModes } from '../../../utils/viewModes';
 
-import { ProductDetailComponent } from '../../detail-view/product/product-detail.component';
-import { ProductsListComponent } from '../../list-view/product/products-list.component';
+import { ProductDetailComponent } from '../../product/detail/product-detail.component';
+import { ProductsListComponent } from '../../product/list/products-list.component';
 
 @Component({
   templateUrl: 'product-modal.component.html',

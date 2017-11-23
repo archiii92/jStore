@@ -3,27 +3,16 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Buyer } from '../model/buyer';
+import { Buyer } from '../model/buyer.model';
 import { BUYERS } from '../../mock-data/buyers-mock';
+import { GenericService } from './generic-service';
+import { HttpClient } from '@angular/common/http';
+
+const API_URL = 'buyers';
 
 @Injectable()
-export class BuyerService {
-  private url = 'api/buyer';
-
-  private headers = new Headers({'Content-Type': 'application/json'});
-
-  constructor(private http: Http) { }
-
-  getBuyers(): Promise<Buyer[]> {
-    return Promise.resolve(BUYERS);
-  }
-
-  getBuyer(id: string): Promise<Buyer> {
-    return Promise.resolve(BUYERS.find(x => x.id === id));
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
+export class BuyerService extends GenericService<Buyer> {
+  constructor(http: HttpClient) {
+    super(http, API_URL);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { CartDetailComponent } from '../components/cartDetail/cartDetail.component';
+import { CartDetailComponent } from '../components/cart/detail/cart-detail.component';
 
 /**
  * If first navigation is navigation to CartDetailComponent, then reroute to products

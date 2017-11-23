@@ -4,19 +4,23 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand ml-2" href="#">{{appName}}</a>
+        <a class="navbar-brand ml-2" href="#">jStore</a>
       </div>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" routerLink="/products">Товары</a>
-          <a class="nav-item nav-link disabled" routerLink="/buyers">Покупатели</a>
-          <a class="nav-item nav-link disabled" routerLink="/sellers">Продавцы</a>
-          <a class="nav-item nav-link disabled" routerLink="/orders">Покупки</a>
+          <a class="nav-item nav-link" routerLink="/buyers">Покупатели</a>
+          <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/sellers">Продавцы</a>
+          <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/orders">Покупки</a>
         </div>
           <cart-summary class="ml-auto"></cart-summary>
-          <button class="btn-sm btn-primary ml-3" routerLink="/auth">
-              <span>Войти</span>
-              <i class="fa fa-sign-in ml-1" aria-hidden="true"></i>
+          <button *ngIf="!authenticated" class="btn-sm btn-outline-primary ml-3" routerLink="/auth">
+            <span>Войти</span>
+            <i class="fa fa-sign-in ml-1" aria-hidden="true"></i>
+          </button>
+          <button *ngIf="authenticated" class="btn-sm btn-outline-danger ml-3" (click)="logout()">
+            <span>Выйти</span>
+            <i class="fa fa-sign-out ml-1" aria-hidden="true"></i>
           </button>
       </div>
   </nav>

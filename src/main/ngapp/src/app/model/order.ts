@@ -1,4 +1,4 @@
-import { Buyer } from './buyer';
+import { Buyer } from './buyer.model';
 import { Seller } from './seller';
 
 export class Order {
