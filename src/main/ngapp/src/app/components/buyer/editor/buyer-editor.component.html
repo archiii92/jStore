@@ -1,0 +1,50 @@
+<div class="modal fade show" #buyerModal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <form novalidate #form="ngForm" (ngSubmit)="save(form)" class="modal-content">
+        <div class="modal-header text-white" [class.bg-primary]="editing" [class.bg-success]="!editing">
+          <h5 class="modal-title" id="exampleModalLabel">{{ editing ? 'Редактирование' : 'Создание' }} покупателя</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label>Имя</label>
+              <input class="form-control" name="firstName" [(ngModel)]="buyer.firstName" />
+            </div>
+            <div class="form-group">
+              <label>Фимилия</label>
+              <input class="form-control" name="lastName" [(ngModel)]="buyer.lastName" />
+            </div>
+            <div class="form-group">
+              <label>Дата рождения</label>
+              <input class="form-control" name="birthDate" [(ngModel)]="buyer.birthDate" />
+            </div>
+            <div class="form-group">
+              <label>Адрес</label>
+              <input class="form-control" name="address" [(ngModel)]="buyer.address" />
+            </div>
+            <div class="form-group">
+              <label>Город</label>
+              <input class="form-control" name="city" [(ngModel)]="buyer.city" />
+            </div>
+            <div class="form-group">
+              <label>Страна</label>
+              <input class="form-control" name="country" [(ngModel)]="buyer.country" />
+            </div>
+            <div class="form-group">
+              <label>Домашний телефон</label>
+              <input class="form-control" name="homePhone" [(ngModel)]="buyer.homePhone" />
+            </div>
+            <div class="form-group">
+              <label>Электронная почта</label>
+              <input class="form-control" name="email" [(ngModel)]="buyer.email" />
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary" [class.bg-primary]="editing" [class.bg-success]="!editing">{{editing ? 'Сохранить' : 'Создать'}}</button>
+        </div>
+      </form>
+    </div>
+  </div>

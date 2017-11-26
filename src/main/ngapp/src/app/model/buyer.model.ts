@@ -12,7 +12,6 @@ export class Buyer extends Entity {
     birthDate: Date = null;
     address: string = null;
     city: string = null;
-    region: string = null;
     country: string = null;
     homePhone: string = null;
     email: string = null;

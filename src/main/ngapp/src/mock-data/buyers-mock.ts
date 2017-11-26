@@ -8,7 +8,6 @@ export const BUYERS: Buyer[] = [
       "birthDate": new Date("1963-07-19"),
       "address": "1787 Hickory Heights Drive",
       "city": "Baltimore",
-      "region": "MD",
       "country": "USA",
       "homePhone": "443-984-9923",
       "email": "TimothyActon@dayrep.com"
@@ -20,7 +19,6 @@ export const BUYERS: Buyer[] = [
       "birthDate": new Date("1998-05-09"),
       "address": "3240 Bobcat Drive",
       "city": "Miami",
-      "region": "FL",
       "country": "USA",
       "homePhone": "240-784-4495",
       "email": "JenniferSantana@jourrapide.com"
@@ -32,7 +30,6 @@ export const BUYERS: Buyer[] = [
       "birthDate": new Date("1968-12-29"),
       "address": "51, place Stanislas",
       "city": "Paris",
-      "region": "",
       "country": "France",
       "homePhone": "03.64.89.58.81",
       "email": "SergeTremblay@teleworm.us"
@@ -44,7 +41,6 @@ export const BUYERS: Buyer[] = [
       "birthDate": new Date("1993-09-06"),
       "address": "20 Feather Street",
       "city": "Sidney",
-      "region": "NSW",
       "country": "Australia",
       "homePhone": "(07) 5327 3384",
       "email": "RachelRasp@teleworm.us"
@@ -56,7 +52,6 @@ export const BUYERS: Buyer[] = [
       "birthDate": new Date("1982-05-17"),
       "address": "98 Redcliffe Way",
       "city": "London",
-      "region": "",
       "country": "UK",
       "homePhone": "070 6399 7886",
       "email": "GeorginaFry@teleworm.us"

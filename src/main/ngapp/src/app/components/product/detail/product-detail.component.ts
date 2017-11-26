@@ -4,11 +4,11 @@ import { Location } from '@angular/common';
 
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../model/product.model';
-import { ViewModes } from '../../../utils/viewModes';
 
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/switchMap';
 import { Cart } from '../../../model/cart.model';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   templateUrl: 'product-detail.component.html',
@@ -19,13 +19,13 @@ export class ProductDetailComponent implements OnInit {
   public static updateProduct: Subject<Product> = new Subject();
 
   product: Product;
-  mode: ViewModes;
 
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
     private location: Location,
-    private cart: Cart
+    private cart: Cart,
+    private auth: AuthService
   ) {
     ProductDetailComponent.updateProduct.subscribe(updatedProduct => {
       this.product = updatedProduct;
@@ -61,5 +61,9 @@ export class ProductDetailComponent implements OnInit {
    */
   addProductToCart(): void {
     this.cart.addLine(this.product);
+  }
+
+  get authenticated(): boolean {
+    return this.auth.authenticated;
   }
 }

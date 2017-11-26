@@ -1,8 +1,8 @@
 <div class="modal fade show" #productModal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="exampleModalLabel">{{ mode === 1 ? 'Редактирование' : 'Создание' }} товара</h5>
+      <div class="modal-header text-white" [class.bg-primary]="editing" [class.bg-success]="!editing">
+        <h5 class="modal-title" id="exampleModalLabel">{{ editing ? 'Редактирование' : 'Создание' }} товара</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -99,8 +99,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary" (click)="save()">Сохранить</button>
+        <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button class="btn btn-primary" (click)="save()" [class.bg-primary]="editing" [class.bg-success]="!editing">{{editing ? 'Сохранить' : 'Создать'}}</button>
       </div>
     </div>
   </div>

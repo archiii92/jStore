@@ -8,19 +8,18 @@ declare var $: any;
 
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../model/product.model';
-import { ViewModes } from '../../../utils/viewModes';
 
 import { ProductDetailComponent } from '../../product/detail/product-detail.component';
 import { ProductsListComponent } from '../../product/list/products-list.component';
 
 @Component({
-  templateUrl: 'product-modal.component.html',
-  styleUrls: ['product-modal.component.less']
+  templateUrl: 'product-editor.component.html',
+  styleUrls: ['product-editor.component.less']
 })
-export class ProductModalComponent implements OnInit {
+export class ProductEditorComponent implements OnInit {
 
   product: Product;
-  mode: ViewModes;
+  editing: boolean = false;
   @ViewChild('productModal') productModal: ElementRef;
 
   constructor(
@@ -37,10 +36,10 @@ export class ProductModalComponent implements OnInit {
       .switchMap((params: ParamMap) => {
         const id = params.get('id');
         if (id) {
-          this.mode = ViewModes.Edit;
+          this.editing = true;
           return this.productService.getById(id);
         } else {
-          this.mode = ViewModes.New;
+          this.editing = false;
           return Promise.resolve(new Product());
         }
       })
@@ -58,7 +57,7 @@ export class ProductModalComponent implements OnInit {
    * Update or Create product.
    */
   save(): void {
-    if (this.mode === 1) {
+    if (this.editing) {
       this.productService.update(this.product)
         .subscribe(() => {
           ProductDetailComponent.updateProduct.next(this.product);

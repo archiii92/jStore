@@ -5,6 +5,7 @@ import { ProductService } from '../../../services/product.service';
 
 import { Subject } from 'rxjs/Subject';
 import { declination } from '../../../utils/declination';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   templateUrl: 'products-list.component.html'
@@ -16,7 +17,10 @@ export class ProductsListComponent implements OnInit {
   products: Product[];
   units: [string, string, string] = ['штука', 'штуки', 'штук'];
 
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private auth: AuthService
+    ) {
     ProductsListComponent.updateProductsList.subscribe(newProduct => {
       this.products.push(newProduct);
     });
@@ -32,5 +36,9 @@ export class ProductsListComponent implements OnInit {
 
   unitsName(n: number): string {
     return declination(this.units, n);
+  }
+
+  get authenticated(): boolean {
+    return this.auth.authenticated;
   }
 }

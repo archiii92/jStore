@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" routerLink="/products">Товары</a>
-          <a class="nav-item nav-link" routerLink="/buyers">Покупатели</a>
+          <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/buyers">Покупатели</a>
           <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/sellers">Продавцы</a>
           <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/orders">Покупки</a>
         </div>

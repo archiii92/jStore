@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from '../guards/auth.guard';
+import { StoreFirstGuard } from '../guards/store-first.guard';
+
 import { ProductsListComponent } from '../components/product/list/products-list.component';
 import { ProductDetailComponent } from '../components/product/detail/product-detail.component';
-import { ProductModalComponent } from '../components/product/modal/product-modal.component';
+import { ProductEditorComponent } from '../components/product/editor/product-editor.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { CartDetailComponent } from '../components/cart/detail/cart-detail.component';
-import { StoreFirstGuard } from '../guards/storeFirst.guard';
 import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { AuthComponent } from '../components/auth/auth.component';
-import { AuthGuard } from '../guards/auth.guard';
 import { BuyersTableComponent } from '../components/buyer/table/buyers-table.component';
+import { BuyerEditorComponent } from '../components/buyer/editor/buyer-editor.component';
 
 const routes: Routes = [
   {
@@ -34,7 +36,7 @@ const routes: Routes = [
     children: [
       {
         path: 'new',
-        component: ProductModalComponent,
+        component: ProductEditorComponent,
         canActivate: [ AuthGuard ]
       }
     ],
@@ -46,7 +48,7 @@ const routes: Routes = [
     children: [
       {
         path: 'edit',
-        component: ProductModalComponent,
+        component: ProductEditorComponent,
         canActivate: [ AuthGuard ]
       }
     ],
@@ -55,7 +57,19 @@ const routes: Routes = [
   {
     path: 'buyers',
     component: BuyersTableComponent,
-    canActivate: [ StoreFirstGuard ] // AuthGuard
+    canActivate: [ StoreFirstGuard, AuthGuard ],
+    children: [
+      {
+        path: 'edit/:id',
+        component: BuyerEditorComponent,
+        canActivate: [ AuthGuard ]
+      },
+      {
+        path: 'new',
+        component: BuyerEditorComponent,
+        canActivate: [ AuthGuard ]
+      }
+    ],
   },
   // {
   //   path: "admin",
