@@ -14,7 +14,7 @@ module.exports = function (req, res, next) {
         }
         res.end();
         return;
-    } else if (req.method != "GET") {
+    } else if (req.url != "/products" && req.method != "GET") {
         let token = req.headers["authorization"];
         if (token != null && token.startsWith("Bearer<")) {
             token = token.substring(7, token.length - 1);

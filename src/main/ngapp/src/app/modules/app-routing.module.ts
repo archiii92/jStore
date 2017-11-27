@@ -15,6 +15,7 @@ import { BuyersTableComponent } from '../components/buyer/table/buyers-table.com
 import { BuyerEditorComponent } from '../components/buyer/editor/buyer-editor.component';
 import { SellersTableComponent } from '../components/seller/table/sellers-table.component';
 import { SellerEditorComponent } from '../components/seller/editor/seller-editor.component';
+import { OrdersTableComponent } from '../components/order/table/orders-table.component';
 
 const routes: Routes = [
   {
@@ -89,6 +90,11 @@ const routes: Routes = [
         canActivate: [ AuthGuard ]
       }
     ],
+  },
+  {
+    path: 'orders',
+    component: OrdersTableComponent,
+    canActivate: [ StoreFirstGuard, AuthGuard ]
   },
   {
     path: 'auth',

@@ -30,6 +30,7 @@ import { BuyersTableComponent } from '../components/buyer/table/buyers-table.com
 import { BuyerEditorComponent } from '../components/buyer/editor/buyer-editor.component';
 import { SellersTableComponent } from '../components/seller/table/sellers-table.component';
 import { SellerEditorComponent } from '../components/seller/editor/seller-editor.component';
+import { OrdersTableComponent } from '../components/order/table/orders-table.component';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { SellerEditorComponent } from '../components/seller/editor/seller-editor
     BuyersTableComponent,
     BuyerEditorComponent,
     SellersTableComponent,
-    SellerEditorComponent
+    SellerEditorComponent,
+    OrdersTableComponent
   ],
   providers: [
     ProductService,
@@ -59,7 +61,6 @@ import { SellerEditorComponent } from '../components/seller/editor/seller-editor
     OrderService,
     SellerService,
     Cart,
-    Order,
     AuthService,
     {
       provide: HTTP_INTERCEPTORS,

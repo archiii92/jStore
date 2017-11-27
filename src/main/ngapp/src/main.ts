@@ -10,3 +10,9 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
+
+//TODO Form validation
+//TODO Migrate from Template-driven Forms to Reactive Forms
+//TODO Language service RUS-ENG
+//TODO Migrate from bootstrap alpha to beta
+//TODO Migrate from less to postCSS
