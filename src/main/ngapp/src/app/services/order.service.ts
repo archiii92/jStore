@@ -5,7 +5,6 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/observable/from';
 
 import { Order } from '../model/order.model';
-import { ORDERS } from '../../mock-data/orders-mock';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()

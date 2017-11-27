@@ -3,24 +3,24 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 import { Location } from '@angular/common';
 import { NgForm } from "@angular/forms";
 
-import 'jquery';
 declare var $: any;
+import 'jquery';
 
-import { BuyersTableComponent } from "../table/buyers-table.component";
-import { Buyer } from "../../../model/buyer.model";
-import { BuyerService } from "../../../services/buyer.service";
+import { SellersTableComponent } from "../table/sellers-table.component";
+import { Seller } from "../../../model/seller.model";
+import { SellerService } from "../../../services/seller.service";
 
 @Component({
-    templateUrl: 'buyer-editor.component.html'
+    templateUrl: 'seller-editor.component.html'
 })
-export class BuyerEditorComponent implements OnInit {
-  buyer: Buyer;
+export class SellerEditorComponent implements OnInit {
+  seller: Seller;
   editing: boolean = false;
 
-  @ViewChild('buyerModal') modal: ElementRef;
+  @ViewChild('sellerModal') modal: ElementRef;
 
   constructor(
-    private service: BuyerService,
+    private service: SellerService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
@@ -33,10 +33,10 @@ export class BuyerEditorComponent implements OnInit {
         return this.service.getById(id);
       } else {
         this.editing = false;
-        return Promise.resolve(new Buyer());
+        return Promise.resolve(new Seller());
       }
-    }).subscribe(buyer => {
-      this.buyer = Object.assign({}, buyer);
+    }).subscribe(seller => {
+      this.seller = Object.assign({}, seller);
       this.show();
 
       $(this.modal.nativeElement).on('hidden.bs.modal', () => {
@@ -46,18 +46,18 @@ export class BuyerEditorComponent implements OnInit {
 }
 
   /**
-   * Update or Create buyer.
+   * Update or Create seller.
    */
   save(form: NgForm): void {
     if (this.editing) {
-      this.service.update(this.buyer).subscribe(() => {
-        BuyersTableComponent.updateBuyer.next(this.buyer);
+      this.service.update(this.seller).subscribe(() => {
+        SellersTableComponent.updateSeller.next(this.seller);
         this.hide();
       });
     } else {
-      this.service.create(this.buyer).subscribe((buyer) => {
-        this.buyer.id = buyer.id;
-        BuyersTableComponent.addBuyer.next(this.buyer);
+      this.service.create(this.seller).subscribe((seller) => {
+        this.seller.id = seller.id;
+        SellersTableComponent.addSeller.next(this.seller);
         this.hide();
       });
     }

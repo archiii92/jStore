@@ -1,11 +1,15 @@
-export class Seller {
+/**
+ * Seller model.
+ * @class
+ */
+
+import { Entity } from './entity.model';
+
+export class Seller extends Entity {
     id: string;
     companyName: string;
-    contactName: string;
-    contactTitle: string;
     address: string;
     city: string;
-    region: string;
     country: string;
     phone: string;
 }

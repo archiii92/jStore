@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Entity } from '../model/entity';
+import { Entity } from '../model/entity.model';
 import { Observable } from 'rxjs/Observable';
 
 const PROTOCOL = 'http';

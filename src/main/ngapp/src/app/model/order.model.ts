@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cart } from './cart.model';
-import { Entity } from './entity';
+import { Entity } from './entity.model';
 
 @Injectable()
 export class Order extends Entity {

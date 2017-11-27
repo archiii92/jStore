@@ -22,14 +22,14 @@
       <td>{{b.country}}</td>
       <td>{{b.homePhone}}</td>
       <td>{{b.email}}</td>
-      <td>
-        <button class="btn btn-sm btn-warning" [routerLink]="['./edit', b.id]">Редактировать</button>
+      <td class="pull-right">
         <button class="btn btn-sm btn-danger" (click)="delete(b.id)">Удалить</button>
+        <button class="btn btn-sm btn-primary" [routerLink]="['./edit', b.id]">Редактировать</button>
       </td>
     </tr>
   </tbody>
 </table>
-<button class="btn btn-primary pull-right" [routerLink]="['./new']">Добавить нового покупателя</button>
+<button class="btn btn-success pull-right" [routerLink]="['./new']">Добавить нового покупателя</button>
 <div>
   <router-outlet></router-outlet>
 </div>

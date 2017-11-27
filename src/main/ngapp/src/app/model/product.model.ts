@@ -3,7 +3,7 @@
  * @class
  */
 
-import { Entity } from './entity';
+import { Entity } from './entity.model';
 
 export class Product extends Entity {
     name: string = null;

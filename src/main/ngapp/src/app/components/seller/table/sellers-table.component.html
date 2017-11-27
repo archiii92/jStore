@@ -1,0 +1,30 @@
+<table class="table table-sm table-striped">
+    <thead>
+      <tr>
+        <th>Название компании</th>
+        <th>Адрес</th>
+        <th>Город</th>
+        <th>Страна</th>
+        <th>Телефон</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of sellers">
+        <td>{{s.companyName}}</td>
+        <td>{{s.address}}</td>
+        <td>{{s.city}}</td>
+        <td>{{s.country}}</td>
+        <td>{{s.phone}}</td>
+        <td class="pull-right">
+          <button class="btn btn-sm btn-danger" (click)="delete(s.id)">Удалить</button>
+          <button class="btn btn-sm btn-primary" [routerLink]="['./edit', s.id]">Редактировать</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-success pull-right" [routerLink]="['./new']">Добавить нового продавца</button>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  

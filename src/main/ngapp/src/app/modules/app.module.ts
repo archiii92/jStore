@@ -28,6 +28,8 @@ import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { AuthComponent } from '../components/auth/auth.component';
 import { BuyersTableComponent } from '../components/buyer/table/buyers-table.component';
 import { BuyerEditorComponent } from '../components/buyer/editor/buyer-editor.component';
+import { SellersTableComponent } from '../components/seller/table/sellers-table.component';
+import { SellerEditorComponent } from '../components/seller/editor/seller-editor.component';
 
 @NgModule({
   imports: [
@@ -47,12 +49,15 @@ import { BuyerEditorComponent } from '../components/buyer/editor/buyer-editor.co
     CheckoutComponent,
     AuthComponent,
     BuyersTableComponent,
-    BuyerEditorComponent
+    BuyerEditorComponent,
+    SellersTableComponent,
+    SellerEditorComponent
   ],
   providers: [
     ProductService,
     BuyerService,
     OrderService,
+    SellerService,
     Cart,
     Order,
     AuthService,

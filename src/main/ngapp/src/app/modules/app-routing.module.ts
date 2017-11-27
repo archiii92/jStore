@@ -13,6 +13,8 @@ import { CheckoutComponent } from '../components/checkout/checkout.component';
 import { AuthComponent } from '../components/auth/auth.component';
 import { BuyersTableComponent } from '../components/buyer/table/buyers-table.component';
 import { BuyerEditorComponent } from '../components/buyer/editor/buyer-editor.component';
+import { SellersTableComponent } from '../components/seller/table/sellers-table.component';
+import { SellerEditorComponent } from '../components/seller/editor/seller-editor.component';
 
 const routes: Routes = [
   {
@@ -71,11 +73,23 @@ const routes: Routes = [
       }
     ],
   },
-  // {
-  //   path: "admin",
-  //   loadChildren: "app/admin/admin.module#AdminModule",
-  //   canActivate: [ StoreFirstGuard ]
-  // },
+  {
+    path: 'sellers',
+    component: SellersTableComponent,
+    canActivate: [ StoreFirstGuard, AuthGuard ],
+    children: [
+      {
+        path: 'edit/:id',
+        component: SellerEditorComponent,
+        canActivate: [ AuthGuard ]
+      },
+      {
+        path: 'new',
+        component: SellerEditorComponent,
+        canActivate: [ AuthGuard ]
+      }
+    ],
+  },
   {
     path: 'auth',
     component: AuthComponent,
