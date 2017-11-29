@@ -2,7 +2,7 @@ module.exports = function () {
   return {  
     products: [
         {
-          "id": 1,
+          "id": "1",
           "name": "Apple iPhone X",
           "unitPrice": 999,
           "descriptionShort": "Мы знаем что ты его хочешь",
@@ -19,7 +19,7 @@ module.exports = function () {
           "resolutionWidth": 1125
         },
         {
-          "id": 2,
+          "id": "2",
           "name": "Apple iPhone 8 Plus",
           "unitPrice": 799,
           "descriptionShort": "Когда не хватило на iPhone X",
@@ -36,7 +36,7 @@ module.exports = function () {
           "resolutionWidth": 1080
         },
         {
-          "id": 3,
+          "id": "3",
           "name": "Apple iPhone 8",
           "unitPrice": 699,
           "descriptionShort": "За такие деньги - спасибо что хоть iPhone",
@@ -53,7 +53,7 @@ module.exports = function () {
           "resolutionWidth": 750
         },
         {
-          "id": 4,
+          "id": "4",
           "name": "Samsung Galaxy S8",
           "unitPrice": 424,
           "descriptionShort": "Великолепный и безграничный",
@@ -70,7 +70,7 @@ module.exports = function () {
           "resolutionWidth": 1440
         },
         {
-          "id": 5,
+          "id": "5",
           "name": "Samsung Galaxy Note 8",
           "unitPrice": 929,
           "descriptionShort": "Добивайся большего",
@@ -89,7 +89,7 @@ module.exports = function () {
     ],
     buyers: [
       {
-        "id": 1,
+        "id": "1",
         "firstName": "Timothy",
         "lastName": "Acton",
         "birthDate": new Date("1963-07-19"),
@@ -100,7 +100,7 @@ module.exports = function () {
         "email": "TimothyActon@dayrep.com"
       },
       {
-        "id": 2,
+        "id": "2",
         "firstName": "Jennifer",
         "lastName": "Santana",
         "birthDate": new Date("1998-05-09"),
@@ -111,7 +111,7 @@ module.exports = function () {
         "email": "JenniferSantana@jourrapide.com"
       },
       {
-        "id": 3,
+        "id": "3",
         "firstName": "Serge",
         "lastName": "Tremblay",
         "birthDate": new Date("1968-12-29"),
@@ -122,7 +122,7 @@ module.exports = function () {
         "email": "SergeTremblay@teleworm.us"
       },
       {
-        "id": 4,
+        "id": "4",
         "firstName": "Rachel",
         "lastName": "Rasp",
         "birthDate": new Date("1993-09-06"),
@@ -133,7 +133,7 @@ module.exports = function () {
         "email": "RachelRasp@teleworm.us"
       },
       {
-        "id": 5,
+        "id": "5",
         "firstName": "Georgina",
         "lastName": "Fry",
         "birthDate": new Date("1982-05-17"),
@@ -146,7 +146,7 @@ module.exports = function () {
     ],
     sellers: [
       {
-        "id": 1,
+        "id": "1",
         "companyName": "Ebay",
         "address": "2025 Hamilton Avenue",
         "city": "San Jose",
@@ -154,7 +154,7 @@ module.exports = function () {
         "phone": "(408) 376-7400"
       },
       {
-        "id": 2,
+        "id": "2",
         "companyName": "Amazon",
         "address": "410 Terry Ave",
         "city": "Seattle",

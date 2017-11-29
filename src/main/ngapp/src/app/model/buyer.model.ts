@@ -6,7 +6,6 @@
 import { Entity } from './entity.model';
 
 export class Buyer extends Entity {
-    id: string = null;
     firstName: string = null;
     lastName: string = null;
     birthDate: Date = null;
