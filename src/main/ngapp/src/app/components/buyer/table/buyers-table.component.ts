@@ -18,7 +18,7 @@ export class BuyersTableComponent implements OnInit {
     private location: Location
   ) {
     BuyersTableComponent.updateBuyer.subscribe(buyer => {
-      this.buyers[this.buyers.findIndex((el)=> el.id === buyer.id)] = buyer;
+      this.buyers[this.buyers.findIndex(el => el.id === buyer.id)] = buyer;
     });
     BuyersTableComponent.addBuyer.subscribe(buyer => {
       this.buyers.push(buyer);
@@ -31,7 +31,7 @@ export class BuyersTableComponent implements OnInit {
 
   delete(id: string): void {
     this.service.delete(id).subscribe(() => {
-      this.buyers.splice(this.buyers.findIndex((el)=> el.id === id), 1);
+      this.buyers.splice(this.buyers.findIndex(el => el.id === id), 1);
     });
   }
 

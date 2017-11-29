@@ -23,6 +23,6 @@ export class Order extends Entity {
 
     this.buyerId = buyerId;
     this.sellerId = sellerId;
-    lines.forEach(line => this.positions.push(new ProductAndQuantity(line.product.id, line.quantity)))
+    lines.forEach(line => this.positions.push(new ProductAndQuantity(line.product.id, line.quantity)));
   }
 }

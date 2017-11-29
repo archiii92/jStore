@@ -51,7 +51,7 @@ export class OrdersTableComponent implements OnInit {
 
   delete(id: string): void {
     this.orderService.delete(id).subscribe(() => {
-      this.orders.splice(this.orders.findIndex((el)=> el.id === id), 1);
+      this.orders.splice(this.orders.findIndex(el => el.id === id), 1);
     });
   }
 

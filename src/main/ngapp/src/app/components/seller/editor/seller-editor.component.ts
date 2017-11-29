@@ -1,21 +1,21 @@
-import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
-import { ActivatedRoute, ParamMap } from "@angular/router";
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-import { NgForm } from "@angular/forms";
+import { NgForm } from '@angular/forms';
 
 declare var $: any;
 import 'jquery';
 
-import { SellersTableComponent } from "../table/sellers-table.component";
-import { Seller } from "../../../model/seller.model";
-import { SellerService } from "../../../services/seller.service";
+import { SellersTableComponent } from '../table/sellers-table.component';
+import { Seller } from '../../../model/seller.model';
+import { SellerService } from '../../../services/seller.service';
 
 @Component({
     templateUrl: 'seller-editor.component.html'
 })
 export class SellerEditorComponent implements OnInit {
   seller: Seller;
-  editing: boolean = false;
+  editing = false;
 
   @ViewChild('sellerModal') modal: ElementRef;
 

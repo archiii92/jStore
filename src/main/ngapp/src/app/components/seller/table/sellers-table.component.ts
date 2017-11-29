@@ -18,7 +18,7 @@ export class SellersTableComponent implements OnInit {
     private location: Location
   ) {
     SellersTableComponent.updateSeller.subscribe(seller => {
-      this.sellers[this.sellers.findIndex((el)=> el.id === seller.id)] = seller;
+      this.sellers[this.sellers.findIndex( el => el.id === seller.id)] = seller;
     });
     SellersTableComponent.addSeller.subscribe(seller => {
       this.sellers.push(seller);
@@ -31,7 +31,7 @@ export class SellersTableComponent implements OnInit {
 
   delete(id: string): void {
     this.service.delete(id).subscribe(() => {
-      this.sellers.splice(this.sellers.findIndex((el)=> el.id === id), 1);
+      this.sellers.splice(this.sellers.findIndex( el => el.id === id), 1);
     });
   }
 

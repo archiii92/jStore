@@ -13,12 +13,12 @@ import { Product } from '../../model/product.model';
 @Component({
     templateUrl: 'checkout.component.html'
 })
-export class CheckoutComponent implements OnInit{
+export class CheckoutComponent implements OnInit {
     orderSent = false;
     // submitted = false;
     buyers: Buyer[] = [];
     sellers: Seller[] = [];
-    //order: Order;
+    // order: Order;
 
     @ViewChild('buyerSelect') buyerSelect: ElementRef;
     @ViewChild('sellerSelect') sellerSelect: ElementRef;
@@ -38,7 +38,7 @@ export class CheckoutComponent implements OnInit{
     submitOrder(form: NgForm) {
       // this.submitted = true;
       if (form.valid) {
-        //this.order = ;
+        // this.order = ;
 
         this.orderService.create(new Order(this.buyerSelect.nativeElement.value, this.sellerSelect.nativeElement.value, this.cart.lines)).subscribe(order => {
             // this.order.clear();

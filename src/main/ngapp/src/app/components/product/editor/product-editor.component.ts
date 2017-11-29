@@ -19,7 +19,7 @@ import { ProductsListComponent } from '../../product/list/products-list.componen
 export class ProductEditorComponent implements OnInit {
 
   product: Product;
-  editing: boolean = false;
+  editing = false;
   @ViewChild('productModal') productModal: ElementRef;
 
   constructor(
