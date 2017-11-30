@@ -29,7 +29,7 @@ export class Cart {
     updateQuantity(productId: string, quantity: number = 1) {
         const line = this.lines.find(l => l.product.id === productId);
         if (line !== undefined) {
-            line.quantity = quantity;
+            line.quantity = +quantity;
         }
         this.recalculate();
     }

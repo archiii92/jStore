@@ -41,7 +41,7 @@ export class CheckoutComponent implements OnInit {
         // this.order = ;
 
         this.orderService.create(new Order(this.buyerSelect.nativeElement.value, this.sellerSelect.nativeElement.value, this.cart.lines)).subscribe(order => {
-            // this.order.clear();
+            this.cart.clear();
             this.orderSent = true;
             // this.submitted = false;
         });

@@ -8,15 +8,9 @@ public class Seller extends AbstractBaseEntity {
 
     private String companyName;
 
-    private String contactName;
-
-    private String contactTitle;
-
     private String address;
 
     private String city;
-
-    private String region;
 
     private String country;
 
@@ -28,22 +22,6 @@ public class Seller extends AbstractBaseEntity {
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
-    }
-
-    public String getContactName() {
-        return contactName;
-    }
-
-    public void setContactName(String contactName) {
-        this.contactName = contactName;
-    }
-
-    public String getContactTitle() {
-        return contactTitle;
-    }
-
-    public void setContactTitle(String contactTitle) {
-        this.contactTitle = contactTitle;
     }
 
     public String getAddress() {
@@ -60,14 +38,6 @@ public class Seller extends AbstractBaseEntity {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
     }
 
     public String getCountry() {

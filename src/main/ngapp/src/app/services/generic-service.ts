@@ -4,7 +4,11 @@ import { Entity } from '../model/entity.model';
 import { Observable } from 'rxjs/Observable';
 
 const PROTOCOL = 'http';
-const PORT = 3500;
+//json-server
+//const PORT = 3500;
+
+// tomcat server
+const PORT = 8080;
 
 /**
  * Generic service class.
@@ -16,7 +20,7 @@ export class GenericService<T extends Entity> {
     private http: HttpClient;
 
     constructor(http: HttpClient, API_URL: string) {
-        this.baseUrl = PROTOCOL + '://' + location.hostname + ':' + PORT + '/' + API_URL;
+        this.baseUrl = PROTOCOL + '://' + location.hostname + ':' + PORT + '/api/' + API_URL;
         this.http = http;
     }
 
