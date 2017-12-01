@@ -7,12 +7,12 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class JStoreInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{JStoreConfiguration.class};
+        return new Class[]{ JStoreConfiguration.class };
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{WebConfig.class};
+        return new Class[]{ WebConfig.class };
     }
 
     @Override

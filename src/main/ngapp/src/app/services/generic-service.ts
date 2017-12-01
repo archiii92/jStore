@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Entity } from '../model/entity.model';
 import { Observable } from 'rxjs/Observable';
 
@@ -32,15 +32,23 @@ export class GenericService<T extends Entity> {
         return this.http.get<T>(this.baseUrl + '/' + id);
     }
 
-    create(entity: T): Observable<T> {
-        return this.http.post<T>(this.baseUrl, entity);
+    create(entity: T): Observable<string> {
+        return this.http.post(this.baseUrl, entity, {responseType: 'text'});
     }
 
-    update(entity: T): Observable<T> {
-        return this.http.put<T>(this.baseUrl + '/' + entity.id, entity);
+    update(entity: T): Observable<void> {
+        return this.http.put<void>(this.baseUrl, entity);
     }
 
     delete(id: string): Observable<void> {
         return this.http.delete<void>(this.baseUrl + '/' + id);
     }
 }
+
+// create(entity: T): Observable<T> {
+//     return this.http.post<T>(this.baseUrl, entity);
+// }
+
+// update(entity: T): Observable<T> {
+//     return this.http.put<T>(this.baseUrl + '/' + entity.id, entity);
+// }

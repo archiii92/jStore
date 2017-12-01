@@ -65,8 +65,8 @@ export class ProductEditorComponent implements OnInit {
         });
     } else {
       this.productService.create(this.product)
-        .subscribe((product) => {
-          this.product.id = product.id;
+        .subscribe((productId) => {
+          this.product.id = productId;
           ProductsListComponent.updateProductsList.next(this.product);
           this.hide();
         });

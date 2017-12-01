@@ -55,8 +55,8 @@ export class BuyerEditorComponent implements OnInit {
         this.hide();
       });
     } else {
-      this.service.create(this.buyer).subscribe((buyer) => {
-        this.buyer.id = buyer.id;
+      this.service.create(this.buyer).subscribe((buyerId) => {
+        this.buyer.id = buyerId;
         BuyersTableComponent.addBuyer.next(this.buyer);
         this.hide();
       });

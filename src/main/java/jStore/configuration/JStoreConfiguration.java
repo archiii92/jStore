@@ -1,5 +1,6 @@
 package jStore.configuration;
 
+import jStore.repositories.BuyerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -44,10 +45,11 @@ public class JStoreConfiguration {
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Map<String, Object> jpaProperties = new HashMap<>();
-        jpaProperties.put("hibernate.hbm2ddl.auto", "none");
+        jpaProperties.put("hibernate.hbm2ddl.auto", "create-drop");
         jpaProperties.put("hibernate.show_sql", "true");
         jpaProperties.put("hibernate.format_sql", "true");
         jpaProperties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
+        jpaProperties.put("hibernate.physical_naming_strategy", "jStore.configuration.PhysicalNamingStrategyImpl");
         entityManagerFactoryBean.setJpaPropertyMap(jpaProperties);
 
         return entityManagerFactoryBean;
@@ -59,5 +61,10 @@ public class JStoreConfiguration {
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         transactionManager.setDataSource(dataSource);
         return transactionManager;
+    }
+
+    @Bean
+    public BuyerRepository buyerRepository() {
+        return new BuyerRepository();
     }
 }
