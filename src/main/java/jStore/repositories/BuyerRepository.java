@@ -1,19 +1,14 @@
 package jStore.repositories;
 
 import jStore.models.Buyer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.repository.NoRepositoryBean;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.UUID;
 
 public class BuyerRepository {
-
     @PersistenceContext
     private EntityManager entityManager;
 

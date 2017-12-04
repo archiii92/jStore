@@ -1,6 +1,8 @@
 package jStore.configuration;
 
 import jStore.repositories.BuyerRepository;
+import jStore.repositories.ProductRepository;
+import jStore.repositories.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -66,5 +68,15 @@ public class JStoreConfiguration {
     @Bean
     public BuyerRepository buyerRepository() {
         return new BuyerRepository();
+    }
+
+    @Bean
+    public SellerRepository sellerRepository() {
+        return new SellerRepository();
+    }
+
+    @Bean
+    public ProductRepository productRepository() {
+        return new ProductRepository();
     }
 }
