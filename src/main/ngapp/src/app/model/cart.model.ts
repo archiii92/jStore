@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Product } from './product.model';
+import {Injectable} from '@angular/core';
+import {Product} from './product.model';
 
 @Injectable()
 export class CartLine {
@@ -51,6 +51,12 @@ export class Cart {
         this.cartPrice = 0;
         this.lines.forEach(line => {
             this.itemCount += line.quantity;
+
+            // const lineDiscount = line.product.discounts
+            //     .filter(discount => discount.minimumQuantity <= line.quantity)
+            //     .map(discount => discount.value)
+            //     .sort()
+
             this.cartPrice += (line.quantity * line.product.unitPrice);
         });
     }

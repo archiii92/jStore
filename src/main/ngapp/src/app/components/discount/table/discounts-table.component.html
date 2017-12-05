@@ -1,0 +1,25 @@
+<table class="table table-sm table-striped">
+    <thead>
+    <tr>
+        <th>Название товара</th>
+        <th>Минимальное количество</th>
+        <th>Скидка</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let d of discounts">
+        <td>{{d.product.name}}</td>
+        <td>{{d.minimumQuantity}}</td>
+        <td>{{d.value}}</td>
+        <td class="pull-right">
+            <button class="btn btn-sm btn-danger" (click)="delete(d.id)">Удалить</button>
+            <button class="btn btn-sm btn-primary" [routerLink]="['./edit', d.id]">Редактировать</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<button class="btn btn-success pull-right" [routerLink]="['./new']">Добавить новую скидку</button>
+<div>
+    <router-outlet></router-outlet>
+</div>

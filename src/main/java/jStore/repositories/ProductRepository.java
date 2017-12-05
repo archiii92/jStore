@@ -1,6 +1,7 @@
 package jStore.repositories;
 
 import jStore.models.Product;
+import org.hibernate.Hibernate;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -14,7 +15,11 @@ public class ProductRepository {
 
     @Transactional
     public List<Product> getAll() {
-        return entityManager.createQuery("SELECT p from Product p", Product.class).getResultList();
+        List<Product> products = entityManager.createQuery("SELECT p from Product p", Product.class).getResultList();
+        products.forEach(product -> {
+            Hibernate.initialize(product.getDiscounts());
+        });
+        return products;
     }
 
     @Transactional

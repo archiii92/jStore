@@ -1,9 +1,6 @@
 package jStore.configuration;
 
-import jStore.repositories.BuyerRepository;
-import jStore.repositories.OrderRepository;
-import jStore.repositories.ProductRepository;
-import jStore.repositories.SellerRepository;
+import jStore.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -84,5 +81,10 @@ public class JStoreConfiguration {
     @Bean
     public OrderRepository orderRepository() {
         return new OrderRepository();
+    }
+
+    @Bean
+    public DiscountRepository discountRepository() {
+        return new DiscountRepository();
     }
 }

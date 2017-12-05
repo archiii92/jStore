@@ -3,9 +3,11 @@
  * @class
  */
 
-import { Entity } from './entity.model';
+import {Entity} from './entity.model';
+import {Discount} from './discount.model';
 
 export class Product extends Entity {
+    discounts: Discount[] = [];
     name: string = null;
     unitPrice: number = null;
     descriptionShort: string = null;

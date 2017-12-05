@@ -1,9 +1,15 @@
 package jStore.models;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Product extends AbstractBaseEntity {
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Discount> discounts;
 
     private String name;
 
@@ -32,6 +38,14 @@ public class Product extends AbstractBaseEntity {
     private int resolutionHeight;
 
     private int resolutionWidth;
+
+    public List<Discount> getDiscounts() {
+        return discounts;
+    }
+
+    public void setDiscounts(List<Discount> discounts) {
+        this.discounts = discounts;
+    }
 
     public String getName() {
         return name;

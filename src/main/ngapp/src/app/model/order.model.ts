@@ -1,9 +1,13 @@
-import { Injectable } from '@angular/core';
-import { CartLine } from './cart.model';
-import { Entity } from './entity.model';
-import { Buyer } from './buyer.model';
-import { Seller } from './seller.model';
-import { Product } from './product.model';
+/**
+ * Order model.
+ * @class
+ */
+
+import {CartLine} from './cart.model';
+import {Entity} from './entity.model';
+import {Buyer} from './buyer.model';
+import {Seller} from './seller.model';
+import {Product} from './product.model';
 
 class orderDetail {
   product: Product = new Product();

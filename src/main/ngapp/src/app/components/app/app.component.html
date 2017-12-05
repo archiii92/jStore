@@ -12,6 +12,7 @@
           <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/buyers">Покупатели</a>
           <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/sellers">Продавцы</a>
           <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/orders">Покупки</a>
+            <a *ngIf="authenticated" class="nav-item nav-link" routerLink="/discounts">Скидки</a>
         </div>
           <cart-summary class="ml-auto"></cart-summary>
           <button *ngIf="!authenticated" class="btn-sm btn-outline-primary ml-3" routerLink="/auth">

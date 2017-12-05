@@ -1,16 +1,39 @@
 package jStore.models;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
-@MappedSuperclass
-class Discount extends AbstractBaseEntity {
-    private short discount;
+@Entity
+public class Discount extends AbstractBaseEntity {
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product product;
 
-    public short getDiscount() {
-        return discount;
+    private int minimumQuantity;
+
+    private short value;
+
+    public Product getProduct() {
+        return product;
     }
 
-    public void setDiscount(short discount) {
-        this.discount = discount;
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public int getMinimumQuantity() {
+        return minimumQuantity;
+    }
+
+    public void setMinimumQuantity(int minimumQuantity) {
+        this.minimumQuantity = minimumQuantity;
+    }
+
+    public short getValue() {
+        return value;
+    }
+
+    public void setValue(short value) {
+        this.value = value;
     }
 }
