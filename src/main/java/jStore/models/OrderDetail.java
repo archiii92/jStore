@@ -11,9 +11,6 @@ public class OrderDetail extends AbstractBaseEntity {
     @ManyToOne(fetch = FetchType.EAGER)
     private Product product;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Order order;
-
     public Integer getQuantity() {
         return quantity;
     }
@@ -28,13 +25,5 @@ public class OrderDetail extends AbstractBaseEntity {
 
     public void setProduct(Product product) {
         this.product = product;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
     }
 }

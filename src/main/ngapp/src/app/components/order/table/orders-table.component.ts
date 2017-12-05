@@ -37,17 +37,17 @@ export class OrdersTableComponent implements OnInit {
     });
   }
 
-  getBuyersName(buyerId: string): string {
-    const buyer = this.buyers.find(b => b.id === buyerId);
+  // getBuyersName(buyerId: string): string {
+  //   const buyer = this.buyers.find(b => b.id === buyerId);
 
-    return buyer.firstName + ' ' + buyer.lastName;
-  }
+  //   return buyer.firstName + ' ' + buyer.lastName;
+  // }
 
-  getSellersName(sellerId: string): string {
-    const seller = this.sellers.find(s => s.id === sellerId);
+  // getSellersName(sellerId: string): string {
+  //   const seller = this.sellers.find(s => s.id === sellerId);
 
-    return seller.companyName;
-  }
+  //   return seller.companyName;
+  // }
 
   delete(id: string): void {
     this.orderService.delete(id).subscribe(() => {

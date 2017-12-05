@@ -10,8 +10,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let o of orders">
-      <td>{{getBuyersName(o.buyerId)}}</td>
-      <td>{{getSellersName(o.sellerId)}}</td>
+      <td>{{o.buyer.firstName + ' ' + o.buyer.firstName}}</td>
+      <td>{{o.seller.companyName}}</td>
       <td>{{o.orderDate | date}}</td>
       <td class="pull-right">
         <button class="btn btn-sm btn-danger" (click)="delete(o.id)">Удалить</button>

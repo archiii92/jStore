@@ -1,28 +1,31 @@
 import { Injectable } from '@angular/core';
 import { CartLine } from './cart.model';
 import { Entity } from './entity.model';
+import { Buyer } from './buyer.model';
+import { Seller } from './seller.model';
+import { Product } from './product.model';
 
-class ProductAndQuantity {
-  productId: string;
+class orderDetail {
+  product: Product = new Product();
   quantity: number;
 
   constructor(productId: string, quantity: number) {
-    this.productId = productId;
+    this.product.id = productId;
     this.quantity = quantity;
   }
 }
 
 export class Order extends Entity {
   orderDate: Date = new Date();
-  buyerId: string = null;
-  sellerId: string = null;
-  positions: ProductAndQuantity[] = [];
+  buyer: Buyer = new Buyer();
+  seller: Seller = new Seller();
+  orderDetails: orderDetail[] = [];
 
   constructor(buyerId: string, sellerId: string, lines: CartLine[]) {
     super();
 
-    this.buyerId = buyerId;
-    this.sellerId = sellerId;
-    lines.forEach(line => this.positions.push(new ProductAndQuantity(line.product.id, line.quantity)));
+    this.buyer.id = buyerId;
+    this.seller.id = sellerId;
+    lines.forEach(line => this.orderDetails.push(new orderDetail(line.product.id, line.quantity)));
   }
 }
