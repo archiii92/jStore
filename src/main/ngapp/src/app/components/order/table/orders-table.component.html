@@ -4,31 +4,31 @@
       <th>Покупатель</th>
       <th>Продавец</th>
       <th>Дата продажи</th>
-        <th colspan="2">Товары в заказе</th>
+      <th colspan="2">Товары в заказе</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
   <tr *ngIf="orders.length == 0">
-      <td colspan="6" class="text-center">Покупки отсутствуют</td>
+    <td colspan="6" class="text-center">Покупки отсутствуют</td>
   </tr>
   <ng-template ngFor let-o [ngForOf]="orders">
-      <tr>
-          <td>{{o.buyer.firstName + ' ' + o.buyer.firstName}}</td>
-          <td>{{o.seller.companyName}}</td>
-          <td>{{o.orderDate | date}}</td>
-          <th>Название товара</th>
-          <th>Количество</th>
-          <td class="pull-right">
-              <button class="btn btn-sm btn-danger" (click)="delete(o.id)">Удалить</button>
-              <!-- <button class="btn btn-sm btn-primary" [routerLink]="['./edit', s.id]">Редактировать</button> -->
-          </td>
-      </tr>
-      <tr *ngFor="let orderDetail of o.orderDetails">
-          <td colspan="3"></td>
-          <td>{{orderDetail.product.name}}</td>
-          <td>{{orderDetail.quantity}}</td>
-      </tr>
+    <tr>
+      <td>{{o.buyer.firstName + ' ' + o.buyer.firstName}}</td>
+      <td>{{o.seller.companyName}}</td>
+      <td>{{o.orderDate | date}}</td>
+      <th>Название товара</th>
+      <th>Количество</th>
+      <td class="pull-right">
+        <button class="btn btn-sm btn-danger" (click)="delete(o.id)">Удалить</button>
+          <!-- <button class="btn btn-sm btn-primary" [routerLink]="['./edit', s.id]">Редактировать</button> -->
+      </td>
+    </tr>
+    <tr *ngFor="let orderDetail of o.orderDetails">
+      <td colspan="3"></td>
+      <td>{{orderDetail.product.name}}</td>
+      <td>{{orderDetail.quantity}}</td>
+    </tr>
   </ng-template>
   </tbody>
 </table>

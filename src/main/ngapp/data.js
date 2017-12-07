@@ -164,6 +164,9 @@ module.exports = function () {
     ],
     orders: [
       
+    ],
+    discounts: [
+      
     ]
   }
 }

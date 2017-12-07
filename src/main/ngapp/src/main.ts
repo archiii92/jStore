@@ -16,3 +16,5 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 // TODO Language service RUS-ENG
 // TODO Migrate from bootstrap alpha to beta
 // TODO Migrate from less to postCSS
+// TODO Unit and e2e tests
+// TODO Comments

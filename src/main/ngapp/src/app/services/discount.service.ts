@@ -1,7 +1,7 @@
-import {Injectable} from "@angular/core";
-import {GenericService} from "./generic-service";
-import {Discount} from "../model/discount.model";
-import {HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {GenericService} from './generic-service';
+import {Discount} from '../model/discount.model';
+import {HttpClient} from '@angular/common/http';
 
 const API_URL = 'discounts';
 

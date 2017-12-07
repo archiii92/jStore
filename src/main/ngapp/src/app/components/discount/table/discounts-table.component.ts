@@ -13,8 +13,10 @@ export class DiscountsTableComponent implements OnInit {
     public static addDiscount: Subject<Discount> = new Subject();
     discounts: Discount[];
 
-    constructor(private service: DiscountService,
-                private location: Location) {
+    constructor(
+      private service: DiscountService,
+      private location: Location
+    ) {
         DiscountsTableComponent.updateDiscount.subscribe(discount => {
             this.discounts[this.discounts.findIndex(el => el.id === discount.id)] = discount;
         });

@@ -4,8 +4,8 @@ import { Entity } from '../model/entity.model';
 import { Observable } from 'rxjs/Observable';
 
 const PROTOCOL = 'http';
-//json-server
-//const PORT = 3500;
+// json-server
+// const PORT = 3500;
 
 // tomcat server
 const PORT = 8080;
@@ -40,15 +40,15 @@ export class GenericService<T extends Entity> {
         return this.http.put<void>(this.baseUrl, entity);
     }
 
+    // create(entity: T): Observable<string> {
+    //     return this.http.post<string>(this.baseUrl, entity);
+    // }
+
+    // update(entity: T): Observable<void> {
+    //     return this.http.put<void>(this.baseUrl + '/' + entity.id, entity);
+    // }
+
     delete(id: string): Observable<void> {
         return this.http.delete<void>(this.baseUrl + '/' + id);
     }
 }
-
-// create(entity: T): Observable<T> {
-//     return this.http.post<T>(this.baseUrl, entity);
-// }
-
-// update(entity: T): Observable<T> {
-//     return this.http.put<T>(this.baseUrl + '/' + entity.id, entity);
-// }

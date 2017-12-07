@@ -13,6 +13,7 @@ import {SellerService} from '../services/seller.service';
 import {OrderService} from '../services/order.service';
 import {ProductService} from '../services/product.service';
 import {AuthService} from '../services/auth.service';
+import {DiscountService} from '../services/discount.service';
 
 import {Cart} from '../model/cart.model';
 
@@ -31,7 +32,6 @@ import {SellersTableComponent} from '../components/seller/table/sellers-table.co
 import {SellerEditorComponent} from '../components/seller/editor/seller-editor.component';
 import {OrdersTableComponent} from '../components/order/table/orders-table.component';
 import {DiscountsTableComponent} from '../components/discount/table/discounts-table.component';
-import {DiscountService} from '../services/discount.service';
 import {DiscountEditorComponent} from '../components/discount/editor/discount-editor.component';
 
 @NgModule({
@@ -55,9 +55,9 @@ import {DiscountEditorComponent} from '../components/discount/editor/discount-ed
     BuyerEditorComponent,
     SellersTableComponent,
     SellerEditorComponent,
-      OrdersTableComponent,
-      DiscountsTableComponent,
-      DiscountEditorComponent
+    OrdersTableComponent,
+    DiscountsTableComponent,
+    DiscountEditorComponent
   ],
   providers: [
     ProductService,
@@ -66,7 +66,7 @@ import {DiscountEditorComponent} from '../components/discount/editor/discount-ed
     SellerService,
     Cart,
     AuthService,
-      DiscountService,
+    DiscountService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

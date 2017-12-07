@@ -10,8 +10,8 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="buyerSelect">Товар</label>
-                    <select #buyerSelect class="form-control" id="productSelect">
+                    <label for="productSelect">Товар</label>
+                    <select #productSelect class="form-control" id="productSelect">
                         <option *ngFor="let p of products" value="{{ p.id }}">{{ p.name }}</option>
                     </select>
                 </div>
