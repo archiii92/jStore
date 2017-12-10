@@ -20,9 +20,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/index.html").addResourceLocations("/index.html");
-        registry.addResourceHandler("/*.js", "/*.woff2", "/*.woff", "/*.ttf").addResourceLocations("/");
-        registry.addResourceHandler("/assets/*.png").addResourceLocations("/assets/");
-        registry.addResourceHandler("/assets/*.jpg").addResourceLocations("/assets/");
+        registry.addResourceHandler("/*.js", "/*.woff2", "/*.woff", "/*.ttf", "/*.css").addResourceLocations("/");
+        registry.addResourceHandler("/assets/*.png", "/assets/*.jpg").addResourceLocations("/assets/");
     }
 
     /* Here we register the Hibernate5Module into an ObjectMapper, then set this custom-configured ObjectMapper

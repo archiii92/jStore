@@ -14,11 +14,13 @@
             <div class="col-8">
               <label for="name">Название: </label>
               <div class="input-group pb-3">
-                <input id="name" type="text" class="form-control" placeholder="Название" [(ngModel)]="product.name"/>
+                  <input id="name" type="text" class="form-control" placeholder="Название" name="name"
+                         [(ngModel)]="product.name"/>
               </div>
               <label for="descriptionShort">Короткое описание: </label>
               <div class="input-group">
-                <input id="descriptionShort" type="text" class="form-control" placeholder="Короткое описание" [(ngModel)]="product.descriptionShort"/>
+                  <input id="descriptionShort" type="text" class="form-control" placeholder="Короткое описание"
+                         name="descriptionShort" [(ngModel)]="product.descriptionShort"/>
               </div>
             </div>
             <div class="col-4">
@@ -26,18 +28,21 @@
               <div class="input-group pb-3">
                 <span class="input-group-addon">$</span>
                 <span class="input-group-addon">0.00</span>
-                <input id="unitPrice" type="text" class="form-control" placeholder="Цена" [(ngModel)]="product.unitPrice"/>
+                  <input id="unitPrice" type="text" class="form-control" placeholder="Цена" name="unitPrice"
+                         [(ngModel)]="product.unitPrice"/>
               </div>
               <label for="unitsInStock">Кол-во: </label>
               <div class="input-group">
-                <input id="unitsInStock" type="text" class="form-control" placeholder="Кол-во" [(ngModel)]="product.unitsInStock"/>
+                  <input id="unitsInStock" type="text" class="form-control" placeholder="Кол-во" name="unitsInStock"
+                         [(ngModel)]="product.unitsInStock"/>
                 <span class="input-group-addon">шт</span>
               </div>
             </div>
             <div class="col-12 pt-3">
               <label for="descriptionLong">Длинное описание: </label>
               <div class="input-group">
-                <textarea  id="descriptionLong" rows="5" class="form-control" placeholder="Длинное описание" [(ngModel)]="product.descriptionLong"></textarea>
+                  <textarea id="descriptionLong" rows="5" class="form-control" placeholder="Длинное описание"
+                            name="descriptionLong" [(ngModel)]="product.descriptionLong"></textarea>
               </div>
             </div>
           </div>
@@ -48,24 +53,28 @@
               <div class="col-6">
                 <label for="length">Длина: </label>
                 <div class="input-group pb-3">
-                  <input id="length" type="text" class="form-control" placeholder="Длина" [(ngModel)]="product.length"/>
+                    <input id="length" type="text" class="form-control" placeholder="Длина" name="length"
+                           [(ngModel)]="product.length"/>
                   <span class="input-group-addon">мм</span>
                 </div>
                 <label for="width">Ширина: </label>
                 <div class="input-group">
-                  <input id="width" type="text" class="form-control" placeholder="Ширина" [(ngModel)]="product.width"/>
+                    <input id="width" type="text" class="form-control" placeholder="Ширина" name="width"
+                           [(ngModel)]="product.width"/>
                   <span class="input-group-addon">мм</span>
                 </div>
               </div>
               <div class="col-6">
                 <label for="thickness">Толщина: </label>
                 <div class="input-group pb-3">
-                  <input id="thickness" type="text" class="form-control" placeholder="Толщина" [(ngModel)]="product.thickness"/>
+                    <input id="thickness" type="text" class="form-control" placeholder="Толщина" name="thickness"
+                           [(ngModel)]="product.thickness"/>
                   <span class="input-group-addon">мм</span>
                 </div>
                 <label for="weight">Вес: </label>
                 <div class="input-group">
-                  <input id="weight" type="text" class="form-control" placeholder="Вес" [(ngModel)]="product.weight"/>
+                    <input id="weight" type="text" class="form-control" placeholder="Вес" name="weight"
+                           [(ngModel)]="product.weight"/>
                   <span class="input-group-addon">г</span>
                 </div>
               </div>
@@ -77,22 +86,26 @@
             <div class="col-12">
               <label for="display">Тип экрана: </label>
               <div class="input-group">
-                <input id="display" type="text" class="form-control" placeholder="Тип экрана" [(ngModel)]="product.display"/>
+                  <input id="display" type="text" class="form-control" placeholder="Тип экрана" name="display"
+                         [(ngModel)]="product.display"/>
               </div>
             </div>
             <div class="col-4 pt-3">
               <label for="displaySize">Размер: </label>
               <div class="input-group">
-                <input id="displaySize" type="text" class="form-control" placeholder="Размер" [(ngModel)]="product.displaySize"/>
+                  <input id="displaySize" type="text" class="form-control" placeholder="Размер" name="displaySize"
+                         [(ngModel)]="product.displaySize"/>
                 <span class="input-group-addon">"</span>
               </div>
             </div>
             <div class="col-8 pt-3">
               <label for="resolutionHeight">Разрешение: </label>
               <div class="input-group">
-                <input id="resolutionHeight" type="text" class="form-control" placeholder="Разрешение по высоте" [(ngModel)]="product.resolutionHeight"/>
+                  <input id="resolutionHeight" type="text" class="form-control" placeholder="Разрешение по высоте"
+                         name="resolutionHeight" [(ngModel)]="product.resolutionHeight"/>
                 <span class="input-group-addon">X</span>
-                <input id="resolutionWidth" type="text" class="form-control" placeholder="Разрешение по ширине" [(ngModel)]="product.resolutionWidth"/>
+                  <input id="resolutionWidth" type="text" class="form-control" placeholder="Разрешение по ширине"
+                         name="resolutionWidth" [(ngModel)]="product.resolutionWidth"/>
               </div>
             </div>
           </div>

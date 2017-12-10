@@ -52,12 +52,20 @@ export class Cart {
         this.lines.forEach(line => {
             this.itemCount += line.quantity;
 
-            // const lineDiscount = line.product.discounts
-            //     .filter(discount => discount.minimumQuantity <= line.quantity)
-            //     .map(discount => discount.value)
-            //     .sort()
+            // if (line.product.discounts) {
+            //     const lineDiscount = line.product.discounts
+            //         .filter(discount => discount.minimumQuantity <= line.quantity)
+            //         .map(discount => discount.value)
+            //         .sort()
 
+            //     if (lineDiscount.length) {
+            //         this.cartPrice += (line.quantity * line.product.unitPrice - line.quantity * line.product.unitPrice * lineDiscount[0] / 100);
+            //     } else {
+            //         this.cartPrice += (line.quantity * line.product.unitPrice);
+            //     }
+            // } else {
             this.cartPrice += (line.quantity * line.product.unitPrice);
+            // }
         });
     }
 }

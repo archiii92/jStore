@@ -4,10 +4,9 @@
  */
 
 import {Entity} from './entity.model';
-import {Discount} from './discount.model';
 
 export class Product extends Entity {
-    discounts: Discount[] = [];
+    // discounts: Discount[];
     name: string;
     unitPrice: number;
     descriptionShort: string;

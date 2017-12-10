@@ -1,5 +1,8 @@
 package jStore.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
@@ -7,8 +10,8 @@ import java.util.List;
 
 @Entity
 public class Product extends AbstractBaseEntity {
-
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "product")
+    @JsonIgnore
     private List<Discount> discounts;
 
     private String name;
